@@ -104,8 +104,7 @@ const projects = [
     linkedin: "https://linkedin.com/company/defiinsurance",
     whitepaper: "/placeholder.svg", // This would be a PDF link in a real scenario
     team: [
-      { name: "Aakash", role: "Smart Contract Developer", image: "/placeholder.svg?height=100&width=100" },\
-      { name: "Michael Brown\", role: \"Risk Analyst\", image: \"/placeholder.svg?height=100  },
+      { name: "Aakash", role: "Smart Contract Developer", image: "/placeholder.svg?height=100&width=100" },
       { name: "Michael Brown", role: "Risk Analyst", image: "/placeholder.svg?height=100&width=100" },
       { name: "Jessica Taylor", role: "Actuary", image: "/placeholder.svg?height=100&width=100" },
       { name: "Daniel Kim", role: "Frontend Developer", image: "/placeholder.svg?height=100&width=100" }
