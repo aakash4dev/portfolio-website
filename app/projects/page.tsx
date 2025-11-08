@@ -7,85 +7,47 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 
-// Sample projects data - expanded with more projects
+// Personal projects from aakash4dev GitHub
 const projects = [
   {
-    title: "DeFi Exchange Platform",
+    title: "ZKRollup - Zero-Knowledge Rollups",
     description:
-      "A decentralized exchange platform built on Ethereum with automated market making and liquidity pools.",
+      "A Solidity contract implementing Zero-Knowledge Rollups for enhanced scalability and privacy on Ethereum. Reduces gas costs while maintaining security through cryptographic proofs.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["Solidity", "React", "Web3.js", "Ethereum"],
-    category: "DeFi",
-    github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
+    tags: ["Solidity", "Zero-Knowledge", "Rollups", "Ethereum", "Scalability"],
+    category: "ZK",
+    github: "https://gist.github.com/aakash4dev",
+    demo: "https://gist.github.com/aakash4dev",
   },
   {
-    title: "AI-Powered NFT Generator",
+    title: "SmartZK - Zero-Knowledge Smart Contracts",
     description:
-      "An application that uses AI to generate unique NFT artwork based on text prompts and mints them on the blockchain.",
+      "Smart contracts leveraging Zero-Knowledge proofs for secure and private transactions. Enables privacy-preserving blockchain applications with address validation and secure value transfers.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["Python", "TensorFlow", "Solidity", "IPFS"],
+    tags: ["Solidity", "Zero-Knowledge", "Privacy", "Smart Contracts", "ZK-Proofs"],
+    category: "ZK",
+    github: "https://gist.github.com/aakash4dev",
+    demo: "https://gist.github.com/aakash4dev",
+  },
+  {
+    title: "UpdatableNFT - Dynamic NFT Contract",
+    description:
+      "An ERC721 contract allowing dynamic updates to NFT metadata, providing flexibility in NFT applications and enabling evolving digital assets with on-chain metadata management.",
+    image: "/placeholder.svg?height=600&width=800",
+    tags: ["Solidity", "ERC721", "NFT", "Ethereum", "Metadata"],
     category: "NFT",
-    github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
+    github: "https://gist.github.com/aakash4dev",
+    demo: "https://gist.github.com/aakash4dev",
   },
   {
-    title: "Smart Contract Auditing Tool",
-    description: "An automated tool that scans Solidity smart contracts for vulnerabilities and security issues.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["Rust", "Solidity", "Security", "Blockchain"],
-    category: "Security",
-    github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
-  },
-  {
-    title: "Cross-Chain Bridge",
+    title: "LevelDB CRUD Operations in Go",
     description:
-      "A bridge that enables asset transfers between different blockchain networks with security and efficiency.",
+      "A Go-based implementation demonstrating Create, Read, Update, and Delete operations using LevelDB, a fast key-value storage library. Showcases efficient data persistence patterns for backend systems.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["Go", "Solidity", "Blockchain", "Web3"],
-    category: "Infrastructure",
+    tags: ["Go", "LevelDB", "Database", "Backend", "CRUD"],
+    category: "Backend",
     github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
-  },
-  {
-    title: "DAO Governance Platform",
-    description:
-      "A decentralized autonomous organization platform with proposal creation, voting, and treasury management.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["Solidity", "React", "The Graph", "Ethereum"],
-    category: "DAO",
-    github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
-  },
-  {
-    title: "Blockchain Analytics Dashboard",
-    description:
-      "A comprehensive analytics dashboard for monitoring blockchain networks, transactions, and smart contracts.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["TypeScript", "D3.js", "Node.js", "GraphQL"],
-    category: "Analytics",
-    github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
-  },
-  {
-    title: "Decentralized Identity Solution",
-    description: "A self-sovereign identity system using blockchain for secure and private identity verification.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["Rust", "IPFS", "Zero-Knowledge Proofs", "Ethereum"],
-    category: "Identity",
-    github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
-  },
-  {
-    title: "AI Trading Bot",
-    description:
-      "An automated trading bot that uses machine learning to analyze market data and execute trades on DEXs.",
-    image: "/placeholder.svg?height=600&width=800",
-    tags: ["Python", "TensorFlow", "Web3.py", "DeFi"],
-    category: "AI",
-    github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
+    demo: "https://github.com/aakash4dev",
   },
 ]
 

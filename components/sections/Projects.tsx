@@ -9,43 +9,53 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react"
 
 const projects = [
   {
-    title: "DeFi Exchange Platform",
+    title: "ZKRollup - Zero-Knowledge Rollups",
     description:
-      "A decentralized exchange platform built on Ethereum with automated market making and liquidity pools.",
+      "A Solidity contract implementing Zero-Knowledge Rollups for enhanced scalability and privacy on Ethereum. Reduces gas costs while maintaining security through cryptographic proofs.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["Solidity", "React", "Web3.js", "Ethereum"],
-    github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
+    tags: ["Solidity", "Zero-Knowledge", "Rollups", "Ethereum"],
+    github: "https://gist.github.com/aakash4dev",
+    demo: "https://gist.github.com/aakash4dev",
   },
   {
-    title: "AI-Powered NFT Generator",
+    title: "SmartZK - Zero-Knowledge Smart Contracts",
     description:
-      "An application that uses AI to generate unique NFT artwork based on text prompts and mints them on the blockchain.",
+      "Smart contracts leveraging Zero-Knowledge proofs for secure and private transactions. Enables privacy-preserving blockchain applications with address validation and secure value transfers.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["Python", "TensorFlow", "Solidity", "IPFS"],
-    github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
+    tags: ["Solidity", "Zero-Knowledge", "Privacy", "Smart Contracts"],
+    github: "https://gist.github.com/aakash4dev",
+    demo: "https://gist.github.com/aakash4dev",
   },
   {
-    title: "Smart Contract Auditing Tool",
-    description: "An automated tool that scans Solidity smart contracts for vulnerabilities and security issues.",
+    title: "UpdatableNFT - Dynamic NFT Contract",
+    description:
+      "An ERC721 contract allowing dynamic updates to NFT metadata, providing flexibility in NFT applications and enabling evolving digital assets with on-chain metadata management.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["Rust", "Solidity", "Security", "Blockchain"],
-    github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
+    tags: ["Solidity", "ERC721", "NFT", "Ethereum"],
+    github: "https://gist.github.com/aakash4dev",
+    demo: "https://gist.github.com/aakash4dev",
   },
   {
-    title: "Cross-Chain Bridge",
+    title: "LevelDB CRUD Operations in Go",
     description:
-      "A bridge that enables asset transfers between different blockchain networks with security and efficiency.",
+      "A Go-based implementation demonstrating Create, Read, Update, and Delete operations using LevelDB, a fast key-value storage library. Showcases efficient data persistence patterns.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["Go", "Solidity", "Blockchain", "Web3"],
+    tags: ["Go", "LevelDB", "Database", "Backend"],
     github: "https://github.com/aakash4dev",
-    demo: "https://aakash4dev.com",
+    demo: "https://github.com/aakash4dev",
   },
 ]
 
-function ProjectCard({ project, index }) {
+interface Project {
+  title: string
+  description: string
+  image: string
+  tags: string[]
+  github: string
+  demo: string
+}
+
+function ProjectCard({ project, index }: { project: Project; index: number }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
@@ -73,7 +83,7 @@ function ProjectCard({ project, index }) {
         <p className="text-muted-foreground mb-4">{project.description}</p>
 
         <div className="flex flex-wrap gap-2 mb-6">
-          {project.tags.map((tag) => (
+          {project.tags.map((tag: string) => (
             <span key={tag} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary">
               {tag}
             </span>
@@ -142,7 +152,7 @@ export default function Projects() {
         <motion.div variants={itemVariants} className="h-1 w-20 bg-primary mx-auto mb-6 rounded-full" />
 
         <motion.p variants={itemVariants} className="text-lg max-w-2xl mx-auto text-muted-foreground">
-          Here are some of my recent projects in blockchain and AI development.
+          Here are some of my personal projects in blockchain development, smart contracts, and backend systems.
         </motion.p>
       </motion.div>
 
