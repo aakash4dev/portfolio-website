@@ -12,7 +12,6 @@ const navLinks = [
   { name: "Projects", href: "/projects", icon: <Code className="h-4 w-4" /> },
   { name: "Blogs", href: "/blogs", icon: <BookOpen className="h-4 w-4" /> },
   { name: "Tutorials", href: "/tutorials", icon: <Video className="h-4 w-4" /> },
-  { name: "Contact", href: "/contact", icon: <Mail className="h-4 w-4" /> },
   { name: "Surprise", href: "/surprise", icon: <Sparkles className="h-4 w-4" /> },
 ]
 
