@@ -5,6 +5,8 @@ import "./globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import DynamicBackground from "@/components/DynamicBackground"
+import { Analytics } from '@vercel/analytics/next';
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,6 +38,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <Analytics /> 
         </div>
       </body>
     </html>
