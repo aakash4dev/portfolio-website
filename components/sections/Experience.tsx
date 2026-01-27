@@ -19,12 +19,12 @@ const experiences = [
     },
     {
         role: "M.Tech in Artificial Intelligence",
-        company: "BITS Pilani",
-        location: "Remote / Hybrid",
-        period: "2023 – Present",
+        company: "BITS Pilani (WILP)",
+        location: "Remote",
+        period: "Jan 2026 – Jan 2028",
         description: [
+            "Work Integrated Learning Programme while working full-time.",
             "Specializing in Generative AI, Large Language Models, and Deep Learning.",
-            "Conducting research on privacy-preserving machine learning using FHE and ZKP.",
         ],
         tags: ["AI/ML", "Deep Learning", "LLMs", "Research"],
     },
@@ -53,14 +53,12 @@ const experiences = [
     },
     {
         role: "B.Tech in Computer Science",
-        company: "CSVTU, Bhilai", // Smart guess based on Retcons location (Raipur) or I'll just use "University of Technology" to be safe.
-        // Wait, "Retcons" is in Raipur, Chhatisgarh. "CSVTU" is the main tech university there.
-        // But Aakash might be from elsewhere.
-        // I will use "Technical University" as placeholder.
-        location: "India",
-        period: "2017 – 2021",
+        company: "Rungta College of Engineering and Technology",
+        location: "Raipur, Chhatisgarh, India",
+        period: "2018 – 2022",
         description: [
-            "Graduated with First Class Honors.",
+            "Graduated with Honors.",
+            "Managed full-time work at Retcons during final year.",
             "Focus on Data Structures, Algorithms, and Distributed Systems.",
         ],
         tags: ["Computer Science", "Engineering", "Algorithms"],
