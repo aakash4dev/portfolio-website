@@ -8,6 +8,7 @@ import { Search, Calendar, User, Tag } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { blogPosts } from "@/lib/blogs"
+import TiltCard from "@/components/ui/TiltCard"
 
 const categories = ["All", "FHE", "ZK", "Consensus", "Cosmos", "Development", "Privacy"]
 
@@ -65,49 +66,51 @@ export default function BlogsPage() {
       {filteredPosts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPosts.map((post) => (
-            <Link href={`/blogs/${post.id}`} key={post.id} className="group">
-              <div className="glass rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 h-full flex flex-col">
-                <div className="relative h-48 w-full overflow-hidden">
-                  <Image
-                    src={post.image || "/placeholder.svg"}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute top-4 right-4 bg-primary/90 text-white text-xs font-medium px-2 py-1 rounded-full">
-                    {post.category}
-                  </div>
-                </div>
-
-                <div className="p-6 flex-grow flex flex-col">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{post.title}</h3>
-
-                  <p className="text-muted-foreground mb-4 flex-grow">{post.excerpt}</p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary flex items-center"
-                      >
-                        <Tag className="h-3 w-3 mr-1" />
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex justify-between items-center text-xs text-muted-foreground">
-                    <div className="flex items-center">
-                      <User className="h-3 w-3 mr-1" />
-                      {post.author}
-                    </div>
-                    <div className="flex items-center">
-                      <Calendar className="h-3 w-3 mr-1" />
-                      {post.date}
+            <Link href={`/blogs/${post.id}`} key={post.id} className="group h-full block">
+              <TiltCard className="rounded-xl overflow-hidden h-full glass" glareColor="rgba(255, 255, 255, 0.15)">
+                <div className="flex flex-col h-full">
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <Image
+                      src={post.image || "/placeholder.svg"}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute top-4 right-4 bg-primary/90 text-white text-xs font-medium px-2 py-1 rounded-full">
+                      {post.category}
                     </div>
                   </div>
+
+                  <div className="p-6 flex-grow flex flex-col">
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{post.title}</h3>
+
+                    <p className="text-muted-foreground mb-4 flex-grow">{post.excerpt}</p>
+
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary flex items-center"
+                        >
+                          <Tag className="h-3 w-3 mr-1" />
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex justify-between items-center text-xs text-muted-foreground">
+                      <div className="flex items-center">
+                        <User className="h-3 w-3 mr-1" />
+                        {post.author}
+                      </div>
+                      <div className="flex items-center">
+                        <Calendar className="h-3 w-3 mr-1" />
+                        {post.date}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </TiltCard>
             </Link>
           ))}
         </div>

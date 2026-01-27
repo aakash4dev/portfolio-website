@@ -68,6 +68,10 @@ interface SkillCardProps {
   index: number
 }
 
+import TiltCard from "@/components/ui/TiltCard"
+
+// ... (imports remain same)
+
 function SkillCard({ category, items, icon, color, index }: SkillCardProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
@@ -78,32 +82,36 @@ function SkillCard({ category, items, icon, color, index }: SkillCardProps) {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="glass rounded-xl p-6 h-full"
+      className="h-full"
     >
-      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${color} flex items-center justify-center mb-4`}>
-        {icon}
-      </div>
-
-      <h3 className="text-xl font-bold mb-4">{category}</h3>
-
-      <div className="space-y-4">
-        {items.map((skill) => (
-          <div key={skill.name}>
-            <div className="flex justify-between mb-1">
-              <span className="text-sm font-medium">{skill.name}</span>
-              <span className="text-sm text-muted-foreground">{skill.level}%</span>
-            </div>
-            <div className="h-2 bg-muted rounded-full overflow-hidden">
-              <motion.div
-                initial={{ width: 0 }}
-                animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-                transition={{ duration: 1, delay: 0.3 }}
-                className={`h-full bg-gradient-to-r ${color}`}
-              />
-            </div>
+      <TiltCard className="rounded-xl p-6 h-full glass" glareColor="rgba(255, 255, 255, 0.1)">
+        <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${color} flex items-center justify-center mb-4 perspective-1000 group`}>
+          <div className="transition-transform duration-500 group-hover:rotate-y-180 transform-style-3d">
+            {icon}
           </div>
-        ))}
-      </div>
+        </div>
+
+        <h3 className="text-xl font-bold mb-4">{category}</h3>
+
+        <div className="space-y-4">
+          {items.map((skill) => (
+            <div key={skill.name}>
+              <div className="flex justify-between mb-1">
+                <span className="text-sm font-medium">{skill.name}</span>
+                <span className="text-sm text-muted-foreground">{skill.level}%</span>
+              </div>
+              <div className="h-2 bg-muted rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
+                  transition={{ duration: 1, delay: 0.3 }}
+                  className={`h-full bg-gradient-to-r ${color}`}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </TiltCard>
     </motion.div>
   )
 }

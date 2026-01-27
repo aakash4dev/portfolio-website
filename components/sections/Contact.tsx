@@ -81,8 +81,10 @@ export default function Contact() {
           className="space-y-8"
         >
           <motion.div variants={itemVariants} className="flex items-start space-x-4">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Mail className="h-6 w-6 text-primary" />
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 perspective-1000 group">
+              <div className="transition-transform duration-500 group-hover:rotate-y-180 transform-style-3d">
+                <Mail className="h-6 w-6 text-primary" />
+              </div>
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">Email</h3>
@@ -91,8 +93,10 @@ export default function Contact() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex items-start space-x-4">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Phone className="h-6 w-6 text-primary" />
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 perspective-1000 group">
+              <div className="transition-transform duration-500 group-hover:rotate-y-180 transform-style-3d">
+                <Phone className="h-6 w-6 text-primary" />
+              </div>
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">Phone</h3>
@@ -101,8 +105,10 @@ export default function Contact() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex items-start space-x-4">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <MapPin className="h-6 w-6 text-primary" />
+            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 perspective-1000 group">
+              <div className="transition-transform duration-500 group-hover:rotate-y-180 transform-style-3d">
+                <MapPin className="h-6 w-6 text-primary" />
+              </div>
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">Location</h3>

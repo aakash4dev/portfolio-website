@@ -11,8 +11,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default function BlogPostPage({ params }: { params: { id: string } }) {
-  const post = blogPosts.find((p) => p.id === parseInt(params.id))
+export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const post = blogPosts.find((p) => p.id === parseInt(id))
 
   if (!post) {
     notFound()

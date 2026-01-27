@@ -55,6 +55,10 @@ interface Project {
   demo: string
 }
 
+import TiltCard from "@/components/ui/TiltCard"
+
+// ... (imports remain same)
+
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
@@ -65,47 +69,51 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="glass rounded-xl overflow-hidden h-full flex flex-col"
+      className="h-full"
     >
-      <div className="relative h-48 w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
-        <Image
-          src={project.image || "/placeholder.svg"}
-          alt={project.title}
-          fill
-          className="object-cover transition-transform duration-500 hover:scale-110"
-        />
-      </div>
+      <TiltCard className="h-full rounded-xl overflow-hidden glass" glareColor="rgba(59, 130, 246, 0.2)">
+        <div className="flex flex-col h-full">
+          <div className="relative h-48 w-full overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
+            <Image
+              src={project.image || "/placeholder.svg"}
+              alt={project.title}
+              fill
+              className="object-cover transition-transform duration-500 hover:scale-110"
+            />
+          </div>
 
-      <div className="p-6 flex-grow">
-        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+          <div className="p-6 flex-grow">
+            <h3 className="text-xl font-bold mb-2">{project.title}</h3>
 
-        <p className="text-muted-foreground mb-4">{project.description}</p>
+            <p className="text-muted-foreground mb-4">{project.description}</p>
 
-        <div className="flex flex-wrap gap-2 mb-6">
-          {project.tags.map((tag: string) => (
-            <span key={tag} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary">
-              {tag}
-            </span>
-          ))}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {project.tags.map((tag: string) => (
+                <span key={tag} className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="p-6 pt-0 mt-auto flex gap-4">
+            <Button variant="outline" size="sm" asChild>
+              <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <Github className="h-4 w-4 mr-2" />
+                Code
+              </a>
+            </Button>
+
+            <Button size="sm" asChild>
+              <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                <ExternalLink className="h-4 w-4 mr-2" />
+                Demo
+              </a>
+            </Button>
+          </div>
         </div>
-      </div>
-
-      <div className="p-6 pt-0 mt-auto flex gap-4">
-        <Button variant="outline" size="sm" asChild>
-          <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center">
-            <Github className="h-4 w-4 mr-2" />
-            Code
-          </a>
-        </Button>
-
-        <Button size="sm" asChild>
-          <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center">
-            <ExternalLink className="h-4 w-4 mr-2" />
-            Demo
-          </a>
-        </Button>
-      </div>
+      </TiltCard>
     </motion.div>
   )
 }
