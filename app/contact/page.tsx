@@ -2,21 +2,27 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Youtube,
+  Instagram,
+  Mail,
+  Coffee,
+  FileText
+} from "lucide-react"
 
 export default function ContactPage() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   }
@@ -26,117 +32,117 @@ export default function ContactPage() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.5 },
     },
   }
 
+  const socialLinks = [
+    {
+      name: "GitHub",
+      url: "https://www.github.com/aakash4dev",
+      icon: Github,
+      color: "text-gray-200",
+      bgColor: "bg-gray-500/10",
+      description: "Open Source"
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/aakash4dev",
+      icon: Linkedin,
+      color: "text-blue-600",
+      bgColor: "bg-blue-600/10",
+      description: "Professional"
+    },
+    {
+      name: "Twitter",
+      url: "https://www.twitter.com/aakash4dev",
+      icon: Twitter,
+      color: "text-sky-500",
+      bgColor: "bg-sky-500/10",
+      description: "Thoughts & Updates"
+    },
+    {
+      name: "YouTube",
+      url: "https://www.youtube.com/@aakash4dev",
+      icon: Youtube,
+      color: "text-red-500",
+      bgColor: "bg-red-500/10",
+      description: "Tutorials & Tech"
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/aakash4dev",
+      icon: Instagram,
+      color: "text-pink-500",
+      bgColor: "bg-pink-500/10",
+      description: "Life & Tech"
+    },
+    {
+      name: "Medium",
+      url: "https://medium.com/@aakash4dev",
+      icon: FileText,
+      color: "text-white",
+      bgColor: "bg-white/10",
+      description: "Articles"
+    },
+    {
+      name: "Email",
+      url: "mailto:aakash4dev.me@gmail.com",
+      icon: Mail,
+      color: "text-orange-500",
+      bgColor: "bg-orange-500/10",
+      description: "Contact Me"
+    },
+    {
+      name: "Buy Me a Coffee",
+      url: "https://coff.ee/aakash4dev",
+      icon: Coffee,
+      color: "text-yellow-500",
+      bgColor: "bg-yellow-500/10",
+      description: "Support My Work"
+    },
+  ]
+
   return (
-    <main className="pt-24 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">
-          <span className="gradient-text">Get In Touch</span>
-        </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Have a project in mind or want to collaborate? Feel free to reach out!
-        </p>
-      </div>
+    <main className="pt-32 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        className="max-w-6xl mx-auto"
+      >
+        <div className="text-center mb-16">
+          <motion.h1 variants={itemVariants} className="text-4xl font-bold mb-4">
+            Get In <span className="gradient-text">Touch</span>
+          </motion.h1>
+          <motion.div variants={itemVariants} className="h-1 w-20 bg-primary mx-auto mb-6 rounded-full" />
+          <motion.p variants={itemVariants} className="text-lg max-w-2xl mx-auto text-muted-foreground">
+            Connect with me across various platforms. I'm always open to discussing new projects and opportunities.
+          </motion.p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Contact Info */}
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="space-y-8"
-        >
-          <motion.div variants={itemVariants} className="flex items-start space-x-4">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Mail className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <h3 className="text-lg font-medium mb-1">Email</h3>
-              <p className="text-muted-foreground">contact@aakash4dev.com</p>
-            </div>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="flex items-start space-x-4">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Phone className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <h3 className="text-lg font-medium mb-1">Phone</h3>
-              <p className="text-muted-foreground">+1 (555) 123-4567</p>
-            </div>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="flex items-start space-x-4">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <MapPin className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <h3 className="text-lg font-medium mb-1">Location</h3>
-              <p className="text-muted-foreground">San Francisco, CA</p>
-            </div>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="glass p-6 rounded-xl">
-            <h3 className="text-lg font-medium mb-4">Working Hours</h3>
-            <ul className="space-y-2">
-              <li className="flex justify-between">
-                <span className="text-muted-foreground">Monday - Friday</span>
-                <span>9:00 AM - 6:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="text-muted-foreground">Saturday</span>
-                <span>10:00 AM - 4:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="text-muted-foreground">Sunday</span>
-                <span>Closed</span>
-              </li>
-            </ul>
-          </motion.div>
-        </motion.div>
-
-        {/* Contact Form */}
-        <motion.div variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
-          <motion.form variants={itemVariants} className="glass p-6 rounded-xl space-y-6">
-            <div className="space-y-2">
-              <label htmlFor="name" className="text-sm font-medium">
-                Name
-              </label>
-              <Input id="name" placeholder="Your name" required className="bg-background/50" />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium">
-                Email
-              </label>
-              <Input id="email" type="email" placeholder="Your email" required className="bg-background/50" />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="subject" className="text-sm font-medium">
-                Subject
-              </label>
-              <Input id="subject" placeholder="Subject" required className="bg-background/50" />
-            </div>
-
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium">
-                Message
-              </label>
-              <Textarea id="message" placeholder="Your message" rows={5} required className="bg-background/50" />
-            </div>
-
-            <Button type="submit" className="w-full">
-              <Send className="mr-2 h-4 w-4" />
-              Send Message
-            </Button>
-          </motion.form>
-        </motion.div>
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {socialLinks.map((link) => (
+            <motion.a
+              key={link.name}
+              href={link.url}
+              target={link.name === "Email" ? "_self" : "_blank"}
+              rel="noopener noreferrer"
+              variants={itemVariants}
+              className="glass p-6 rounded-xl border border-white/5 hover:border-primary/50 transition-all duration-300 group flex items-center space-x-4 hover:-translate-y-1"
+            >
+              <div className={`w-12 h-12 rounded-lg ${link.bgColor} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                <link.icon className={`h-6 w-6 ${link.color}`} />
+              </div>
+              <div>
+                <h3 className="text-lg font-medium group-hover:text-primary transition-colors">{link.name}</h3>
+                <p className="text-sm text-muted-foreground">{link.description}</p>
+              </div>
+            </motion.a>
+          ))}
+        </div>
+      </motion.div>
     </main>
   )
 }

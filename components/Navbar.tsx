@@ -42,7 +42,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold gradient-text">
-          Aakash<span className="text-primary">.</span>
+          Aakash<span className="text-primary">.S</span>
         </Link>
 
         {/* Desktop Navigation */}
