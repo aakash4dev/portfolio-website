@@ -12,70 +12,11 @@ import { motion, AnimatePresence } from "framer-motion"
 const youtubeVideos = [
   {
     id: "yt1",
-    title: "Building a DeFi Application from Scratch",
-    description: "Learn how to create a complete decentralized finance application using Solidity and React.",
-    embedId: "dQw4w9WgXcQ", // Example YouTube video ID
-    date: "March 10, 2023",
-    tags: ["DeFi", "Solidity", "React"],
-  },
-  {
-    id: "yt2",
-    title: "Smart Contract Security Best Practices",
-    description: "Discover the essential security patterns to protect your smart contracts from vulnerabilities.",
-    embedId: "dQw4w9WgXcQ", // Example YouTube video ID
-    date: "February 15, 2023",
-    tags: ["Security", "Smart Contracts", "Auditing"],
-  },
-  {
-    id: "yt3",
-    title: "Integrating AI with Blockchain",
-    description: "A step-by-step guide to combining machine learning models with blockchain applications.",
-    embedId: "dQw4w9WgXcQ", // Example YouTube video ID
-    date: "January 22, 2023",
-    tags: ["AI", "ML", "Blockchain"],
-  },
-  {
-    id: "yt4",
-    title: "Creating NFT Marketplaces",
-    description: "How to build your own NFT marketplace with metadata handling and auction functionality.",
-    embedId: "dQw4w9WgXcQ", // Example YouTube video ID
-    date: "December 5, 2022",
-    tags: ["NFT", "Marketplace", "ERC-721"],
-  },
-  {
-    id: "yt5",
-    title: "Web3 Authentication Methods",
-    description:
-      "Explore different authentication methods for Web3 applications including wallet connect and sign-in with Ethereum.",
-    embedId: "dQw4w9WgXcQ", // Example YouTube video ID
-    date: "November 18, 2022",
-    tags: ["Web3", "Authentication", "Security"],
-  },
-  {
-    id: "yt6",
-    title: "Building a DAO from Scratch",
-    description:
-      "Learn how to create a Decentralized Autonomous Organization with voting mechanisms and treasury management.",
-    embedId: "dQw4w9WgXcQ", // Example YouTube video ID
-    date: "October 22, 2022",
-    tags: ["DAO", "Governance", "Solidity"],
-  },
-  {
-    id: "yt7",
-    title: "Zero-Knowledge Proofs in Blockchain",
-    description: "Understanding how to implement and use zero-knowledge proofs for privacy in blockchain applications.",
-    embedId: "dQw4w9WgXcQ", // Example YouTube video ID
-    date: "September 15, 2022",
-    tags: ["ZK-Proofs", "Privacy", "Cryptography"],
-  },
-  {
-    id: "yt8",
-    title: "Layer 2 Scaling Solutions",
-    description:
-      "Comparing different Layer 2 scaling solutions for Ethereum including Optimistic Rollups and ZK-Rollups.",
-    embedId: "dQw4w9WgXcQ", // Example YouTube video ID
-    date: "August 10, 2022",
-    tags: ["Layer 2", "Scaling", "Ethereum"],
+    title: "How to Install Android Studio on Ubuntu 24.04 LTS Linux",
+    description: "Full Step-by-Step Guide to setting up Android Studio for mobile development on Ubuntu.",
+    embedId: "V7et6ZH84AM",
+    date: "Current",
+    tags: ["Android", "Linux", "Ubuntu", "Setup"],
   },
 ]
 

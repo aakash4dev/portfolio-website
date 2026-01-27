@@ -91,14 +91,14 @@ const contributions = [
     tags: ["Solidity", "DeFi", "DEX", "AMM"],
   },
   {
-    title: "Retcons Blockchain Explorer",
+    title: "Blockchain Explorer",
     company: "Retcons",
     description:
       "Built a high-performance block explorer from scratch, featuring real-time transaction tracking, visual block propagation graphs, and detailed address analytics.",
     tags: ["Next.js", "WebSockets", "Data Indexing"],
   },
   {
-    title: "Retcons Smart Contract Builder",
+    title: "Smart Contract Builder",
     company: "Retcons",
     description:
       "Created a no-code Solidity smart contract builder allowing users to generate secure ERC-20 and NFT contracts via a drag-and-drop interface.",
