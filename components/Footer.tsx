@@ -10,7 +10,7 @@ export default function Footer() {
             <Link href="/" className="text-xl font-bold gradient-text">
               Aakash<span className="text-primary">.</span>
             </Link>
-            <p className="mt-2 text-sm text-muted-foreground">Blockchain x AI Developer</p>
+            <p className="mt-2 text-sm text-muted-foreground">Senior Blockchain Engineer & AI Developer</p>
           </div>
 
           <div className="flex space-x-6">

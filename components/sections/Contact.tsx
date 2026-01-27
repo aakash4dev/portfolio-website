@@ -33,7 +33,7 @@ export default function Contact() {
     },
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
@@ -41,10 +41,10 @@ export default function Contact() {
     await new Promise((resolve) => setTimeout(resolve, 1500))
 
     setIsSubmitting(false)
-    setIsSubmitted(true)
+    setIsSubmitted(true);
 
     // Reset form
-    e.target.reset()
+    (e.target as HTMLFormElement).reset()
 
     // Reset success message after 3 seconds
     setTimeout(() => {
@@ -86,7 +86,7 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">Email</h3>
-              <p className="text-muted-foreground">contact@aakash4dev.com</p>
+              <p className="text-muted-foreground">aakash4dev.me@gmail.com</p>
             </div>
           </motion.div>
 
@@ -96,7 +96,7 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">Phone</h3>
-              <p className="text-muted-foreground">+1 (555) 123-4567</p>
+              <p className="text-muted-foreground">+91 9770064169</p>
             </div>
           </motion.div>
 
@@ -106,7 +106,7 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">Location</h3>
-              <p className="text-muted-foreground">San Francisco, CA</p>
+              <p className="text-muted-foreground">India (Open to Remote)</p>
             </div>
           </motion.div>
 

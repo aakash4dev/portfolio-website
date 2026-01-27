@@ -6,56 +6,69 @@ import { Code, Cpu, Server, Layers } from "lucide-react"
 
 const skills = [
   {
-    category: "Blockchain",
+    category: "Core Blockchain",
     items: [
+      { name: "Smart Contract Dev", level: 95 },
       { name: "Solidity", level: 95 },
-      { name: "Ethereum", level: 90 },
-      { name: "Smart Contracts", level: 95 },
-      { name: "Web3.js", level: 85 },
-      { name: "Hardhat", level: 80 },
+      { name: "Rust (CosmWasm)", level: 90 },
+      { name: "ZK-Sequencer/Prover", level: 85 },
+      { name: "DeFi Architecture", level: 90 },
     ],
     icon: <Layers className="h-6 w-6" />,
     color: "from-blue-500 to-cyan-400",
   },
   {
-    category: "Programming",
+    category: "Languages",
     items: [
-      { name: "Rust", level: 85 },
-      { name: "Go", level: 80 },
-      { name: "JavaScript", level: 90 },
+      { name: "Rust (Advanced)", level: 90 },
+      { name: "Golang", level: 85 },
+      { name: "Solidity", level: 95 },
+      { name: "Python", level: 80 },
       { name: "TypeScript", level: 85 },
-      { name: "Python", level: 75 },
     ],
     icon: <Code className="h-6 w-6" />,
     color: "from-green-500 to-emerald-400",
   },
   {
-    category: "AI & ML",
+    category: "Infrastructure",
     items: [
-      { name: "TensorFlow", level: 75 },
-      { name: "PyTorch", level: 70 },
-      { name: "LLM Integration", level: 85 },
-      { name: "AI Tools", level: 90 },
-      { name: "Data Analysis", level: 80 },
+      { name: "Docker", level: 85 },
+      { name: "AWS / GCP", level: 80 },
+      { name: "CI/CD", level: 85 },
+      { name: "Tendermint", level: 90 },
+      { name: "IBC", level: 85 },
     ],
-    icon: <Cpu className="h-6 w-6" />,
+    icon: <Server className="h-6 w-6" />,
     color: "from-purple-500 to-violet-400",
   },
   {
-    category: "Backend",
+    category: "AI & Other",
     items: [
-      { name: "Node.js", level: 90 },
-      { name: "Express", level: 85 },
-      { name: "GraphQL", level: 80 },
-      { name: "RESTful APIs", level: 90 },
-      { name: "Microservices", level: 75 },
+      { name: "Machine Learning", level: 75 },
+      { name: "TensorFlow/PyTorch", level: 70 },
+      { name: "Backend (Node.js)", level: 85 },
+      { name: "Frontend (Next.js)", level: 80 },
+      { name: "Gas Optimization", level: 95 },
     ],
-    icon: <Server className="h-6 w-6" />,
+    icon: <Cpu className="h-6 w-6" />,
     color: "from-red-500 to-pink-400",
   },
 ]
 
-function SkillCard({ category, items, icon, color, index }) {
+interface SkillItem {
+  name: string
+  level: number
+}
+
+interface SkillCardProps {
+  category: string
+  items: SkillItem[]
+  icon: React.ReactNode
+  color: string
+  index: number
+}
+
+function SkillCard({ category, items, icon, color, index }: SkillCardProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 

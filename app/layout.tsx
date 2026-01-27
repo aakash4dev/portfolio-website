@@ -17,10 +17,10 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Aakash | Blockchain x AI Developer",
+  title: "Aakash Singh Rajput | Senior Blockchain Engineer & AI Developer",
   description:
-    "Portfolio of Aakash, a developer passionate about building futuristic digital tools and infrastructure.",
-    generator: 'v0.dev'
+    "Portfolio of Aakash Singh Rajput, a Senior Blockchain Engineer & AI Developer specializing in Smart Contract Development, ZK-Sequencers, and DeFi Architecture.",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({

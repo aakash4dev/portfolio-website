@@ -9,38 +9,38 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react"
 
 const projects = [
   {
-    title: "ZKRollup - Zero-Knowledge Rollups",
+    title: "Airchains ZK-Sequencer (Tracks)",
     description:
-      "A Solidity contract implementing Zero-Knowledge Rollups for enhanced scalability and privacy on Ethereum. Reduces gas costs while maintaining security through cryptographic proofs.",
+      "Core contributor to 'Tracks' (ZK-Rollup stack), designing decentralized sequencing layers for secure verification and optimizing proof generation using Rust.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["Solidity", "Zero-Knowledge", "Rollups", "Ethereum"],
-    github: "https://gist.github.com/aakash4dev",
-    demo: "https://gist.github.com/aakash4dev",
+    tags: ["Rust", "ZK-Rollup", "Sequencer", "Blockchain"],
+    github: "https://github.com/aakash4dev",
+    demo: "https://github.com/aakash4dev",
   },
   {
-    title: "SmartZK - Zero-Knowledge Smart Contracts",
+    title: "Tarality ZK-EVM Prover",
     description:
-      "Smart contracts leveraging Zero-Knowledge proofs for secure and private transactions. Enables privacy-preserving blockchain applications with address validation and secure value transfers.",
+      "Implemented a ZK-Prover for EVM-compatibility, focusing on verifying state transitions without revealing user data, enabling privacy-preserving smart contract execution.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["Solidity", "Zero-Knowledge", "Privacy", "Smart Contracts"],
-    github: "https://gist.github.com/aakash4dev",
-    demo: "https://gist.github.com/aakash4dev",
+    tags: ["Go", "ZK-EVM", "Privacy", "Cryptography"],
+    github: "https://github.com/aakash4dev",
+    demo: "https://github.com/aakash4dev",
   },
   {
-    title: "UpdatableNFT - Dynamic NFT Contract",
+    title: "Airchains Cross-Chain Bridge",
     description:
-      "An ERC721 contract allowing dynamic updates to NFT metadata, providing flexibility in NFT applications and enabling evolving digital assets with on-chain metadata management.",
+      "Architected a trustless bridge for assets between Cosmos and EVM chains. Implemented Stablecoin Issuance logic and secure cross-chain message passing (IBC).",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["Solidity", "ERC721", "NFT", "Ethereum"],
-    github: "https://gist.github.com/aakash4dev",
-    demo: "https://gist.github.com/aakash4dev",
+    tags: ["Solidity", "Cosmos", "Bridge", "IBC"],
+    github: "https://github.com/aakash4dev",
+    demo: "https://github.com/aakash4dev",
   },
   {
-    title: "LevelDB CRUD Operations in Go",
+    title: "Nowa Swap (L2 DEX)",
     description:
-      "A Go-based implementation demonstrating Create, Read, Update, and Delete operations using LevelDB, a fast key-value storage library. Showcases efficient data persistence patterns.",
+      "Contributed to the backend and smart contract architecture of the DeFi Swap platform on ZK-EVM. Integrated custom liquidity pools for stablecoin pairs to minimize slippage.",
     image: "/placeholder.svg?height=600&width=800",
-    tags: ["Go", "LevelDB", "Database", "Backend"],
+    tags: ["Solidity", "DeFi", "DEX", "AMM"],
     github: "https://github.com/aakash4dev",
     demo: "https://github.com/aakash4dev",
   },

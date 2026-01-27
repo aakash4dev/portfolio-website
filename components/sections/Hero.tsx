@@ -111,8 +111,8 @@ export default function Hero() {
       opacityChange: number
 
       constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+        this.x = Math.random() * canvas!.width
+        this.y = Math.random() * canvas!.height
         this.size = Math.random() * 1.5 + 0.5
         this.opacity = Math.random() * 0.8 + 0.2
         this.opacityChange = Math.random() * 0.01 + 0.005
@@ -223,18 +223,18 @@ export default function Hero() {
       <div className="z-10 text-center px-4 md:px-8 max-w-4xl">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <h1 className="text-4xl md:text-6xl font-bold mb-4 glow-text">
-            Hi, I'm <span className="gradient-text">Aakash</span>
+            Hi, I'm <span className="gradient-text">Aakash Singh Rajput</span>
           </h1>
 
           <h2 className="text-xl md:text-2xl mb-6 font-bold text-white">
-            Blockchain <span className="text-primary">×</span> AI Developer
+            Senior <span className="text-primary">Blockchain Engineer</span> & <span className="text-purple-500">AI Developer</span>
           </h2>
 
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Building futuristic digital tools and infrastructure with
-            <span className="text-primary font-mono"> Solidity</span>,
-            <span className="text-green-500 font-mono"> Rust</span>, and
-            <span className="text-purple-500 font-mono"> AI</span>.
+            Specializing in
+            <span className="text-primary font-mono"> Smart Contract Development</span>,
+            <span className="text-green-500 font-mono"> ZK-Sequencers</span>, and
+            <span className="text-purple-500 font-mono"> DeFi Architecture</span>.
           </p>
 
           <div className="flex justify-center">

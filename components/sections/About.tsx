@@ -55,17 +55,15 @@ export default function About() {
           <div className="h-1 w-20 bg-primary mb-6 rounded-full" />
 
           <p className="text-lg mb-6">
-            I'm a developer passionate about building futuristic digital tools and infrastructure. My expertise spans
-            across blockchain technologies and artificial intelligence, creating solutions that bridge these
-            cutting-edge domains.
+            Senior Blockchain Engineer with 4+ years of experience specializing in Smart Contract Development (Solidity/Rust) and DeFi Architecture. Expert in building Layer-1 chains (Cosmos-SDK), Stablecoin Issuance protocols, and designing ZK Sequencers & Provers for high-scale networks.
           </p>
 
           <p className="text-lg mb-6">
-            With a strong foundation in <span className="text-primary font-mono">Solidity</span>,
+            Currently pursuing M.Tech in AI at BITS Pilani. My tech stack includes <span className="text-primary font-mono">Solidity</span>,
             <span className="text-green-500 font-mono"> Rust</span>,
-            <span className="text-yellow-500 font-mono"> Go</span>, and
-            <span className="text-purple-500 font-mono"> AI tools</span>, I develop smart contracts and decentralized
-            applications that are secure, efficient, and forward-thinking.
+            <span className="text-yellow-500 font-mono"> Golang</span>,
+            <span className="text-blue-500 font-mono"> Python</span>, and
+            <span className="text-blue-400 font-mono"> TypeScript</span>.
           </p>
 
           <div className="flex space-x-4 mb-8">
