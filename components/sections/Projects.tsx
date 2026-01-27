@@ -55,29 +55,8 @@ const personalProjects = [
 // Data for Professional Contributions
 // Data for Professional Contributions
 const contributions = [
-  {
-    title: "Airchains ZK-Sequencer (Tracks)",
-    company: "Airchains",
-    description:
-      "Core contributor to 'Tracks' (ZK-Rollup stack), designing decentralized sequencing layers for secure verification and optimizing proof generation using Rust.",
-    tags: ["Rust", "ZK-Rollup", "Sequencer", "Blockchain"],
-  },
-  {
-    title: "Airchains Junction (Blockchain)",
-    company: "Airchains",
-    description:
-      "Developed the core Junction blockchain (Cosmos SDK-based) acting as the verification layer for ZK-Rollups, implementing custom switching modules and validator set logic.",
-    tags: ["Go", "Cosmos SDK", "Tendermint", "L1"],
-  },
-  {
-    title: "Airchains Cross-Chain Bridge",
-    company: "Airchains",
-    description:
-      "Architected a trustless bridge for assets between Cosmos and EVM chains. Implemented Stablecoin Issuance logic and secure cross-chain message passing (IBC).",
-    tags: ["Solidity", "Cosmos", "Bridge", "IBC"],
-  },
-  {
-    title: "Tarality ZK-EVM Prover",
+    {
+    title: "ZK-EVM Prover",
     company: "Tarality",
     description:
       "Implemented a ZK-Prover for EVM-compatibility, focusing on verifying state transitions without revealing user data, enabling privacy-preserving smart contract execution.",
@@ -90,6 +69,28 @@ const contributions = [
       "Contributed to the backend and smart contract architecture of the DeFi Swap platform on ZK-EVM. Integrated custom liquidity pools for stablecoin pairs to minimize slippage.",
     tags: ["Solidity", "DeFi", "DEX", "AMM"],
   },
+  {
+    title: "ZK-Sequencer (Tracks)",
+    company: "Airchains",
+    description:
+      "Core contributor to 'Tracks' (ZK-Rollup stack), designing decentralized sequencing layers for secure verification and optimizing proof generation using Rust.",
+    tags: ["Rust", "ZK-Rollup", "Sequencer", "Blockchain"],
+  },
+  {
+    title: "Junction (Blockchain)",
+    company: "Airchains",
+    description:
+      "Developed the core Junction blockchain (Cosmos SDK-based) acting as the verification layer for ZK-Rollups, implementing custom switching modules and validator set logic.",
+    tags: ["Go", "Cosmos SDK", "Tendermint", "L1"],
+  },
+  {
+    title: "Cross-Chain Bridge",
+    company: "Airchains",
+    description:
+      "Architected a trustless bridge for assets between Cosmos and EVM chains. Implemented Stablecoin Issuance logic and secure cross-chain message passing (IBC).",
+    tags: ["Solidity", "Cosmos", "Bridge", "IBC"],
+  },
+
   {
     title: "Blockchain Explorer",
     company: "Retcons",
@@ -257,7 +258,7 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {contributions.map((contribution, index) => (
             <ContributionCard key={contribution.title} contribution={contribution} index={index} />
           ))}
