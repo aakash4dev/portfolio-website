@@ -53,6 +53,7 @@ const personalProjects = [
 ]
 
 // Data for Professional Contributions
+// Data for Professional Contributions
 const contributions = [
   {
     title: "Airchains ZK-Sequencer (Tracks)",
@@ -60,6 +61,13 @@ const contributions = [
     description:
       "Core contributor to 'Tracks' (ZK-Rollup stack), designing decentralized sequencing layers for secure verification and optimizing proof generation using Rust.",
     tags: ["Rust", "ZK-Rollup", "Sequencer", "Blockchain"],
+  },
+  {
+    title: "Airchains Junction (Blockchain)",
+    company: "Airchains",
+    description:
+      "Developed the core Junction blockchain (Cosmos SDK-based) acting as the verification layer for ZK-Rollups, implementing custom switching modules and validator set logic.",
+    tags: ["Go", "Cosmos SDK", "Tendermint", "L1"],
   },
   {
     title: "Airchains Cross-Chain Bridge",
@@ -81,6 +89,20 @@ const contributions = [
     description:
       "Contributed to the backend and smart contract architecture of the DeFi Swap platform on ZK-EVM. Integrated custom liquidity pools for stablecoin pairs to minimize slippage.",
     tags: ["Solidity", "DeFi", "DEX", "AMM"],
+  },
+  {
+    title: "Retcons Blockchain Explorer",
+    company: "Retcons",
+    description:
+      "Built a high-performance block explorer from scratch, featuring real-time transaction tracking, visual block propagation graphs, and detailed address analytics.",
+    tags: ["Next.js", "WebSockets", "Data Indexing"],
+  },
+  {
+    title: "Retcons Smart Contract Builder",
+    company: "Retcons",
+    description:
+      "Created a no-code Solidity smart contract builder allowing users to generate secure ERC-20 and NFT contracts via a drag-and-drop interface.",
+    tags: ["Solidity", "Code Gen", "React", "Tools"],
   },
 ]
 

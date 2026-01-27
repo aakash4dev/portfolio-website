@@ -88,7 +88,9 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">Email</h3>
-              <p className="text-muted-foreground">aakash4dev.me@gmail.com</p>
+              <p className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="mailto:aakash4dev.me@gmail.com">aakash4dev.me@gmail.com</a>
+              </p>
             </div>
           </motion.div>
 
@@ -112,26 +114,14 @@ export default function Contact() {
             </div>
             <div>
               <h3 className="text-lg font-medium mb-1">Location</h3>
-              <p className="text-muted-foreground">India (Open to Remote)</p>
+              <p className="text-muted-foreground">India (Remote)</p>
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="glass p-6 rounded-xl">
-            <h3 className="text-lg font-medium mb-4">Working Hours</h3>
-            <ul className="space-y-2">
-              <li className="flex justify-between">
-                <span className="text-muted-foreground">Monday - Friday</span>
-                <span>9:00 AM - 6:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="text-muted-foreground">Saturday</span>
-                <span>10:00 AM - 4:00 PM</span>
-              </li>
-              <li className="flex justify-between">
-                <span className="text-muted-foreground">Sunday</span>
-                <span>Closed</span>
-              </li>
-            </ul>
+          <motion.div variants={itemVariants} className="glass p-6 rounded-xl border border-white/5">
+            <p className="text-muted-foreground italic">
+              "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision."
+            </p>
           </motion.div>
         </motion.div>
 
