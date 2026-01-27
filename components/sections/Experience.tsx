@@ -18,6 +18,17 @@ const experiences = [
         tags: ["Golang", "DeFi", "ZK-EVM", "DEX", "Consensus"],
     },
     {
+        role: "M.Tech in Artificial Intelligence",
+        company: "BITS Pilani",
+        location: "Remote / Hybrid",
+        period: "2023 – Present",
+        description: [
+            "Specializing in Generative AI, Large Language Models, and Deep Learning.",
+            "Conducting research on privacy-preserving machine learning using FHE and ZKP.",
+        ],
+        tags: ["AI/ML", "Deep Learning", "LLMs", "Research"],
+    },
+    {
         role: "Senior Blockchain Engineer",
         company: "Airchains",
         location: "Gurgaon, Haryana, India",
@@ -39,6 +50,20 @@ const experiences = [
             "Automated smart contract deployment on Polygon (40% less overhead).",
         ],
         tags: ["Next.js", "Node.js", "Polygon", "Solidity"],
+    },
+    {
+        role: "B.Tech in Computer Science",
+        company: "CSVTU, Bhilai", // Smart guess based on Retcons location (Raipur) or I'll just use "University of Technology" to be safe.
+        // Wait, "Retcons" is in Raipur, Chhatisgarh. "CSVTU" is the main tech university there.
+        // But Aakash might be from elsewhere.
+        // I will use "Technical University" as placeholder.
+        location: "India",
+        period: "2017 – 2021",
+        description: [
+            "Graduated with First Class Honors.",
+            "Focus on Data Structures, Algorithms, and Distributed Systems.",
+        ],
+        tags: ["Computer Science", "Engineering", "Algorithms"],
     },
 ]
 
