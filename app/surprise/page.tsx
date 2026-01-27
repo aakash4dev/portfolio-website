@@ -1220,15 +1220,14 @@ function WishlistSection() {
           {filteredAndSortedItems.map((item) => (
             <div
               key={item.id}
-              className={`flex items-center justify-between p-4 rounded-lg transition-colors ${
-                item.completed
+              className={`flex items-center justify-between p-4 rounded-lg transition-colors ${item.completed
                   ? "bg-green-900/20 border border-green-500/30"
                   : item.priority === "High"
                     ? "bg-red-900/10 border border-red-500/30"
                     : item.priority === "Medium"
                       ? "bg-yellow-900/10 border border-yellow-500/30"
                       : "bg-blue-900/10 border border-blue-500/30"
-              }`}
+                }`}
             >
               <div className="flex items-start gap-3">
                 <Button
@@ -1258,13 +1257,12 @@ function WishlistSection() {
                       </Badge>
                     )}
                     <Badge
-                      className={`flex items-center gap-1 text-xs ${
-                        item.priority === "High"
+                      className={`flex items-center gap-1 text-xs ${item.priority === "High"
                           ? "bg-red-500/20 text-red-500"
                           : item.priority === "Medium"
                             ? "bg-yellow-500/20 text-yellow-500"
                             : "bg-blue-500/20 text-blue-500"
-                      }`}
+                        }`}
                     >
                       <Star className="h-3 w-3" />
                       {item.priority} Priority
@@ -1563,9 +1561,8 @@ Process completed with exit code 0.`
           <textarea
             value={codeSnippet}
             onChange={(e) => setCodeSnippet(e.target.value)}
-            className={`flex-1 w-full p-4 font-mono text-sm bg-background/80 rounded-b-lg border border-border focus:outline-none focus:ring-1 focus:ring-primary resize-none ${
-              theme === "light" ? "text-gray-800" : "text-gray-200"
-            }`}
+            className={`flex-1 w-full p-4 font-mono text-sm bg-background/80 rounded-b-lg border border-border focus:outline-none focus:ring-1 focus:ring-primary resize-none ${theme === "light" ? "text-gray-800" : "text-gray-200"
+              }`}
             style={{
               fontSize: `${fontSize}px`,
               backgroundColor: theme === "light" ? "#f8fafc" : "#1e293b",
@@ -1598,9 +1595,8 @@ Process completed with exit code 0.`
             </Button>
           </div>
           <div
-            className={`bg-background/80 p-4 h-full rounded-b-lg border border-border font-mono text-sm overflow-auto whitespace-pre-wrap ${
-              theme === "light" ? "text-gray-800" : "text-gray-200"
-            }`}
+            className={`bg-background/80 p-4 h-full rounded-b-lg border border-border font-mono text-sm overflow-auto whitespace-pre-wrap ${theme === "light" ? "text-gray-800" : "text-gray-200"
+              }`}
             style={{
               fontSize: `${fontSize}px`,
               backgroundColor: theme === "light" ? "#f8fafc" : "#1e293b",
@@ -1729,15 +1725,14 @@ function TerminalComponent() {
         {terminalHistory.map((entry, index) => (
           <div
             key={index}
-            className={`mb-1 ${
-              entry.type === "command"
+            className={`mb-1 ${entry.type === "command"
                 ? "text-white"
                 : entry.type === "error"
                   ? "text-red-500"
                   : entry.type === "success"
                     ? "text-green-500"
                     : ""
-            }`}
+              }`}
           >
             {entry.content}
           </div>
@@ -2405,9 +2400,8 @@ export default function SurprisePage() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className={`rounded-full h-10 w-10 ${
-                      activeSection === item.name ? "bg-primary text-primary-foreground" : ""
-                    }`}
+                    className={`rounded-full h-10 w-10 ${activeSection === item.name ? "bg-primary text-primary-foreground" : ""
+                      }`}
                     onClick={() => {
                       scrollToSection(item.ref)
                       setActiveSection(item.name)
@@ -2488,16 +2482,6 @@ export default function SurprisePage() {
         </div>
       </section>
 
-      {/* Wishlist Section */}
-      <section ref={wishlistRef} className="mb-20">
-        <h2 className="text-3xl font-bold mb-6">
-          <Heart className="h-6 w-6 inline-block mr-2 text-pink-500" />
-          Wishlist
-        </h2>
-
-        <WishlistSection />
-      </section>
-
       {/* Terminal Section */}
       <section ref={terminalRef} className="mb-20">
         <h2 className="text-3xl font-bold mb-6">
@@ -2508,16 +2492,6 @@ export default function SurprisePage() {
         <TerminalComponent />
       </section>
 
-      {/* Dev Tips Section */}
-      <section ref={devTipsRef} className="mb-20">
-        <h2 className="text-3xl font-bold mb-6">
-          <Lightbulb className="h-6 w-6 inline-block mr-2 text-yellow-500" />
-          Dev Tips
-        </h2>
-
-        <DevTipsComponent />
-      </section>
-
       {/* Code Section */}
       <section ref={codeRef} className="mb-20">
         <h2 className="text-3xl font-bold mb-6">
@@ -2526,6 +2500,26 @@ export default function SurprisePage() {
         </h2>
 
         <CodeEditor />
+      </section>
+
+      {/* Wishlist Section */}
+      <section ref={wishlistRef} className="mb-20">
+        <h2 className="text-3xl font-bold mb-6">
+          <Heart className="h-6 w-6 inline-block mr-2 text-pink-500" />
+          Wishlist
+        </h2>
+
+        <WishlistSection />
+      </section>
+
+      {/* Dev Tips Section */}
+      <section ref={devTipsRef} className="mb-20">
+        <h2 className="text-3xl font-bold mb-6">
+          <Lightbulb className="h-6 w-6 inline-block mr-2 text-yellow-500" />
+          Dev Tips
+        </h2>
+
+        <DevTipsComponent />
       </section>
 
       {/* Tools Section */}

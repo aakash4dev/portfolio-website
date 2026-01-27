@@ -49,10 +49,10 @@ export default function DynamicBackground() {
 
         // Color palette that matches the site theme
         const colors = [
-          "rgba(59, 130, 246, 0.6)", // blue
-          "rgba(139, 92, 246, 0.6)", // purple
-          "rgba(16, 185, 129, 0.6)", // green
-          "rgba(245, 158, 11, 0.6)", // amber
+          "rgba(59, 130, 246, 0.6)", // blue-500
+          "rgba(37, 99, 235, 0.6)",  // blue-600
+          "rgba(99, 102, 241, 0.6)", // indigo-500
+          "rgba(79, 70, 229, 0.6)",  // indigo-600
         ]
 
         this.color = colors[Math.floor(Math.random() * colors.length)]
@@ -167,6 +167,8 @@ export default function DynamicBackground() {
 
     // Animation loop
     function animate() {
+      if (!ctx || !canvas) return
+
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       for (const particle of particles) {

@@ -1,5 +1,5 @@
 export interface BlogPost {
-    id: number
+    id: string
     title: string
     excerpt: string
     category: string
@@ -12,11 +12,11 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
     {
-        id: 1,
+        id: "understanding-fhe-in-blockchain",
         title: "Understanding Fully Homomorphic Encryption (FHE) in Blockchain",
         excerpt: "Exploring how FHE enables computation on encrypted data without decryption, revolutionizing privacy in blockchain applications. Learn about the cryptographic foundations and real-world use cases.",
         category: "FHE",
-        date: "January 15, 2024",
+        date: "February 15, 2026",
         author: "Aakash",
         image: "/blogs/fhe.png",
         tags: ["FHE", "Cryptography", "Privacy", "Blockchain"],
@@ -56,11 +56,11 @@ At Airchains, we're exploring FHE for:
 As FHE libraries like OpenFHE and TFHE become more efficient and hardware acceleration (FPGAs/ASICs) improves, we'll see broader adoption in production blockchain systems. The intersection of FHE and zero-knowledge proofs is particularly promising for next-generation privacy solutions.`
     },
     {
-        id: 2,
+        id: "zero-knowledge-proofs-zk-rollups",
         title: "Zero-Knowledge Proofs: A Deep Dive into ZK-Rollups",
         excerpt: "A comprehensive technical exploration of Zero-Knowledge Rollups, their implementation in Solidity, and how they're solving Ethereum's scalability challenges while maintaining security.",
         category: "ZK",
-        date: "December 20, 2023",
+        date: "February 10, 2026",
         author: "Aakash",
         image: "/blogs/zk-rollups.png",
         tags: ["ZK-Proofs", "Rollups", "Ethereum", "Scalability"],
@@ -114,11 +114,11 @@ When building ZKRollup solutions, several quirks emerge:
 ZK-Rollups represent the future of Ethereum scaling, combining security guarantees with massive throughput improvements.`
     },
     {
-        id: 3,
+        id: "building-bft-consensus-in-go",
         title: "Building Byzantine Fault Tolerant Consensus in Go",
         excerpt: "Lessons learned from implementing TracksBFT and WasmBFT - building robust consensus mechanisms that can tolerate malicious nodes while maintaining network security and performance.",
         category: "Consensus",
-        date: "November 10, 2023",
+        date: "February 5, 2026",
         author: "Aakash",
         image: "/blogs/bft.png",
         tags: ["BFT", "Go", "Consensus", "Blockchain"],
@@ -174,11 +174,11 @@ Why build your own when Tendermint exists? We needed:
 Building consensus mechanisms teaches you that distributed systems are hard not because of the code, but because of the chaos of the real-world networks they run on.`
     },
     {
-        id: 4,
+        id: "exploring-cosmos-ecosystem",
         title: "Exploring the Cosmos Ecosystem: Building Interoperable Blockchains",
         excerpt: "An in-depth look at the Cosmos SDK, IBC protocol, and how we're building interoperable blockchain solutions. Learn about the architecture and design decisions behind our Cosmos-based projects.",
         category: "Cosmos",
-        date: "October 5, 2023",
+        date: "January 28, 2026",
         author: "Aakash",
         image: "/blogs/cosmos.png",
         tags: ["Cosmos", "IBC", "Interoperability", "Blockchain"],
@@ -231,11 +231,11 @@ We are building **Junction** and **Tracks** within this ecosystem:
 By leveraging Cosmos, we gain instant interoperability with the largest ecosystem of sovereign chains, allowing our rollup solutions to access liquidity and users from Day 1.`
     },
     {
-        id: 5,
+        id: "smart-contract-security-and-optimization",
         title: "Smart Contract Development: Best Practices for Security and Efficiency",
         excerpt: "Practical insights from developing production smart contracts, including security patterns, gas optimization techniques, and lessons learned from auditing and deploying contracts.",
         category: "Development",
-        date: "September 18, 2023",
+        date: "January 20, 2026",
         author: "Aakash",
         image: "/blogs/smart-contracts.png",
         tags: ["Solidity", "Smart Contracts", "Security", "Best Practices"],
@@ -286,11 +286,11 @@ Never rely on obscurity. Explicitly define who can call what. Use \`Ownable\` or
 Smart contract development is high-stakes engineering. Treat it like building hardware—once it's shipped, you can't easily change it.`
     },
     {
-        id: 6,
+        id: "future-of-privacy-fhe-meets-zk",
         title: "The Future of Privacy in Blockchain: FHE Meets ZK",
         excerpt: "Exploring the convergence of Fully Homomorphic Encryption and Zero-Knowledge Proofs, and how this combination could revolutionize privacy-preserving blockchain applications.",
         category: "Privacy",
-        date: "August 25, 2023",
+        date: "January 11, 2026",
         author: "Aakash",
         image: "/blogs/privacy-future.png",
         tags: ["FHE", "ZK-Proofs", "Privacy", "Cryptography"],

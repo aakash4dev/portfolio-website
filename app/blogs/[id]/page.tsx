@@ -7,13 +7,13 @@ import { blogPosts } from "@/lib/blogs"
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
-    id: post.id.toString(),
+    id: post.id,
   }))
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const post = blogPosts.find((p) => p.id === parseInt(id))
+  const post = blogPosts.find((p) => p.id === id)
 
   if (!post) {
     notFound()

@@ -20,7 +20,7 @@ const personalProjects = [
   },
   {
     title: "Medisence AI",
-    description: "AI-powered medical assistant platform utilizing LLMs to provide health insights and preliminary diagnosis support.",
+    description: "AI-powered medical assistant platform utilizing LLMs to provide health insights and preliminary diagnosis support. (recognised by commudle): https://www.linkedin.com/feed/update/urn:li:activity:7410326705334288384/",
     image: "/projects/medisence.png",
     tags: ["AI", "LLM", "Python", "Healthcare"],
     github: "https://github.com/aakash4dev/medisence-ai",
@@ -55,7 +55,7 @@ const personalProjects = [
 // Data for Professional Contributions
 // Data for Professional Contributions
 const contributions = [
-    {
+  {
     title: "ZK-EVM Prover",
     company: "Tarality",
     description:
