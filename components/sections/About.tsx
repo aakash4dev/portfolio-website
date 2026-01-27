@@ -41,8 +41,8 @@ export default function About() {
         {/* Image */}
         <motion.div variants={itemVariants} className="order-2 md:order-1">
           <div className="relative h-[400px] w-full rounded-2xl overflow-hidden glow-border">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 z-10" />
-            <Image src="/placeholder.svg?height=800&width=600" alt="Aakash" fill className="object-cover" priority />
+            <div className="absolute inset-0 z-10" />
+            <Image src="/me_coding.png?height=800&width=600" alt="Aakash" fill className="object-cover" priority />
           </div>
         </motion.div>
 
