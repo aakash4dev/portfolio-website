@@ -29,7 +29,7 @@ export default function FloatingContact() {
     {
       name: "Email",
       icon: <Mail className="h-5 w-5" />,
-      url: "mailto:contact@aakash4dev.com",
+      url: "mailto:aakash4dev.me@gmail.com",
       color: "hover:bg-red-500",
     },
   ]
