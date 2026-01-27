@@ -6,6 +6,17 @@ import { Briefcase, Calendar, MapPin } from "lucide-react"
 
 const experiences = [
     {
+        role: "M.Tech in Artificial Intelligence",
+        company: "BITS Pilani (WILP)",
+        location: "Remote",
+        period: "Jan 2026 – Jan 2028",
+        description: [
+            "Work Integrated Learning Programme while working full-time.",
+            "Specializing in Generative AI, Large Language Models, and Deep Learning.",
+        ],
+        tags: ["AI/ML", "Deep Learning", "LLMs", "Research"],
+    },
+    {
         role: "Senior Blockchain Engineer",
         company: "Tarality",
         location: "Noida, Uttar Pradesh, India",
@@ -16,17 +27,6 @@ const experiences = [
             "Optimized consensus logic to reduce block finality for high-frequency trading.",
         ],
         tags: ["Golang", "DeFi", "ZK-EVM", "DEX", "Consensus"],
-    },
-    {
-        role: "M.Tech in Artificial Intelligence",
-        company: "BITS Pilani (WILP)",
-        location: "Remote",
-        period: "Jan 2026 – Jan 2028",
-        description: [
-            "Work Integrated Learning Programme while working full-time.",
-            "Specializing in Generative AI, Large Language Models, and Deep Learning.",
-        ],
-        tags: ["AI/ML", "Deep Learning", "LLMs", "Research"],
     },
     {
         role: "Senior Blockchain Engineer",

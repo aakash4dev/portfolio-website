@@ -194,9 +194,8 @@ export default function TutorialsPage() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 ${
-                  activeTab === tab.id ? "text-white" : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`relative flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 ${activeTab === tab.id ? "text-white" : "text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 {activeTab === tab.id && (
                   <motion.div
@@ -266,76 +265,29 @@ export default function TutorialsPage() {
             </div>
           )}
 
-          {/* Udemy Courses - Keep as is */}
+          {/* Udemy Courses - Coming Soon */}
           {activeTab === "udemy" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {udemyCourses.map((course) => (
-                <Card key={course.id} className="glass border-border/30 overflow-hidden">
-                  <div className="relative h-48 w-full">
-                    <Image
-                      src={course.thumbnail || "/placeholder.svg"}
-                      alt={course.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute top-3 right-3 bg-primary text-white text-sm font-bold px-3 py-1 rounded-md">
-                      {course.price}
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
-                  </div>
-
-                  <CardHeader>
-                    <CardTitle className="text-xl">{course.title}</CardTitle>
-                    <CardDescription>{course.description}</CardDescription>
-                  </CardHeader>
-
-                  <CardContent>
-                    <div className="flex justify-between text-sm mb-4">
-                      <div className="flex items-center">
-                        <Clock className="h-4 w-4 mr-1 text-muted-foreground" />
-                        <span>{course.duration}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Star className="h-4 w-4 mr-1 text-yellow-500" />
-                        <span>
-                          {course.rating} ({course.students} students)
-                        </span>
-                      </div>
-                    </div>
-                  </CardContent>
-
-                  <CardFooter>
-                    <Button asChild className="w-full">
-                      <a href={course.url} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        View Course
-                      </a>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
+            <div className="flex flex-col items-center justify-center py-20 text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                <Clock className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2">Coming Soon</h3>
+              <p className="text-muted-foreground max-w-md">
+                I'm currently working on comprehensive courses for blockchain and AI development. Stay tuned!
+              </p>
             </div>
           )}
 
-          {/* Docs - Keep as is */}
+          {/* Docs - Coming Soon */}
           {activeTab === "other" && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {otherResources.map((resource) => (
-                <Card
-                  key={resource.id}
-                  className="glass border-border/30 hover:border-primary/50 transition-all duration-300"
-                >
-                  <CardHeader>
-                    <CardTitle className="text-lg">{resource.title}</CardTitle>
-                    <Badge variant="outline" className="w-fit bg-primary/5 text-xs">
-                      {resource.type}
-                    </Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{resource.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="flex flex-col items-center justify-center py-20 text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                <FileText className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2">Coming Soon</h3>
+              <p className="text-muted-foreground max-w-md">
+                Detailed documentation and developer guides are being curated. Check back later!
+              </p>
             </div>
           )}
         </motion.div>
