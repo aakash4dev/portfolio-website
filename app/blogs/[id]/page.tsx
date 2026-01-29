@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Calendar, User, Tag, ArrowLeft } from "lucide-react"
 import { blogPosts } from "@/lib/blogs"
+import MarkdownRenderer from "@/components/MarkdownRenderer"
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -62,115 +63,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
           {/* Article Content */}
           <div className="prose prose-invert max-w-none prose-lg prose-headings:gradient-text prose-a:text-primary hover:prose-a:underline">
             <div className="markdown-content space-y-6">
-              {(() => {
-                const lines = post.content.split("\n")
-                const elements: any[] = []
-                let inCodeBlock = false
-                let codeBlockContent: string[] = []
-                let codeLanguage = ""
-                let listItems: string[] = []
-                let inList = false
-                let keyCounter = 0
-
-                const flushList = () => {
-                  if (listItems.length > 0) {
-                    elements.push(
-                      <ul key={keyCounter++} className="list-disc list-inside space-y-2 mb-6 ml-4">
-                        {listItems.map((item, idx) => (
-                          <li key={idx} className="text-muted-foreground/90">
-                            {item.replace(/^[-*]\s+/, "").replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")}
-                          </li>
-                        ))}
-                      </ul>
-                    )
-                    listItems = []
-                    inList = false
-                  }
-                }
-
-                const flushCodeBlock = () => {
-                  if (codeBlockContent.length > 0) {
-                    elements.push(
-                      <pre key={keyCounter++} className="bg-muted/50 border border-white/5 p-4 rounded-xl overflow-x-auto mb-6">
-                        <code className={`language-${codeLanguage} text-sm`}>
-                          {codeBlockContent.join("\n")}
-                        </code>
-                      </pre>
-                    )
-                    codeBlockContent = []
-                    codeLanguage = ""
-                  }
-                }
-
-                for (let i = 0; i < lines.length; i++) {
-                  const line = lines[i]
-
-                  if (line.startsWith("```")) {
-                    if (inCodeBlock) {
-                      flushCodeBlock()
-                      inCodeBlock = false
-                    } else {
-                      flushList()
-                      inCodeBlock = true
-                      codeLanguage = line.substring(3).trim() || "text"
-                    }
-                    continue
-                  }
-
-                  if (inCodeBlock) {
-                    codeBlockContent.push(line)
-                    continue
-                  }
-
-                  if (line.match(/^[-*]\s+/)) {
-                    if (!inList) {
-                      flushList()
-                      inList = true
-                    }
-                    listItems.push(line)
-                    continue
-                  } else {
-                    flushList()
-                  }
-
-                  // Skip H1 (Title) to avoid duplication
-                  if (line.startsWith("# ")) {
-                    continue
-                  }
-
-                  if (line.startsWith("## ")) {
-                    elements.push(
-                      <h2 key={keyCounter++} className="text-2xl font-bold mt-10 mb-4 text-foreground/90">
-                        {line.substring(3)}
-                      </h2>
-                    )
-                  } else if (line.startsWith("### ")) {
-                    elements.push(
-                      <h3 key={keyCounter++} className="text-xl font-bold mt-8 mb-3 text-foreground/80">
-                        {line.substring(4)}
-                      </h3>
-                    )
-                  } else if (line.trim() === "") {
-                    // Reduce multiple newlines
-                  } else {
-                    const processedLine = line
-                      .replace(/\*\*(.*?)\*\*/g, "<strong class='text-foreground'>$1</strong>")
-                      .replace(/`(.*?)`/g, '<code class="bg-primary/10 text-primary px-1.5 py-0.5 rounded text-sm font-mono">$1</code>')
-                    elements.push(
-                      <p
-                        key={keyCounter++}
-                        className="mb-6 leading-7 text-muted-foreground/90 text-lg"
-                        dangerouslySetInnerHTML={{ __html: processedLine }}
-                      />
-                    )
-                  }
-                }
-
-                flushList()
-                flushCodeBlock()
-
-                return elements
-              })()}
+              <MarkdownRenderer content={post.content} />
             </div>
           </div>
 
