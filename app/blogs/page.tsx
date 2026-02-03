@@ -29,13 +29,14 @@ export default function BlogsPage() {
   })
 
   return (
-    <main className="pt-24 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">
-          <span className="gradient-text">Blogs</span>
+    <main className="pt-24 pb-16 px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="text-center mb-16">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4 glow-text">
+          Blog & <span className="gradient-text">Articles</span>
         </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Insights, tutorials, and thoughts on blockchain, FHE, ZK, Cosmos, and the future of technology.
+        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          Deep dives into blockchain technology, cryptography, ZK proofs, and building decentralized systems. 
+          Here, I share what I've learned from building at the bleeding edge of Web3.
         </p>
       </div>
 
