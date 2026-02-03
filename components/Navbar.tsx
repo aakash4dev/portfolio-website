@@ -39,7 +39,7 @@ export default function Navbar() {
         scrolled ? "glass py-2" : "bg-transparent py-4"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold gradient-text">
           Aakash<span className="text-primary">.S</span>
         </Link>

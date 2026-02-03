@@ -35,7 +35,7 @@ export default function GoToTop() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
-          className="fixed bottom-8 left-8 z-50"
+          className="fixed bottom-4 left-4 md:bottom-8 md:left-8 z-50"
         >
           <Button
             onClick={scrollToTop}
