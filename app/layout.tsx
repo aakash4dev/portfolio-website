@@ -8,6 +8,7 @@ import Footer from "@/components/Footer"
 import MotionProvider from "@/components/site/MotionProvider"
 import ScrollProgress from "@/components/ScrollProgress"
 import { Analytics } from '@vercel/analytics/next';
+import { siteUrl } from "@/lib/site"
 
 
 // Poppins is used for all text: headings and body.
@@ -23,39 +24,34 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
 })
 
+const description = "Aakash Singh Rajput is a Senior Blockchain & AI Engineer who builds smart contracts, ZK rollups, DeFi apps, AI agents, and developer tools. See projects, experience, and articles."
+const title = "Aakash Singh Rajput | Senior Blockchain & AI Engineer"
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://aakash4dev.com'),
-  title: {
-    default: "Aakash Singh Rajput | Senior Blockchain Engineer & AI Developer",
-    template: "%s | Aakash Singh Rajput"
-  },
-  description: "Portfolio of Aakash Singh Rajput, a Senior Blockchain Engineer & AI Developer who builds smart contracts, ZK rollups, and DeFi apps.",
-  keywords: ["Blockchain", "AI", "Smart Contracts", "ZK-Rollups", "DeFi", "Full Stack Developer", "Aakash Singh Rajput"],
-  authors: [{ name: "Aakash Singh Rajput" }],
+  metadataBase: new URL(siteUrl),
+  title: { default: title, template: "%s | Aakash Singh Rajput" },
+  description,
+  keywords: ["Aakash Singh Rajput", "aakash4dev", "Blockchain Engineer", "AI Engineer", "Smart Contracts", "Solidity", "Rust", "Cosmos SDK", "ZK Rollups", "DeFi", "AI Agents", "Web3 Developer India"],
+  authors: [{ name: "Aakash Singh Rajput", url: siteUrl }],
   creator: "Aakash Singh Rajput",
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://aakash4dev.com",
-    title: "Aakash Singh Rajput | Senior Blockchain Engineer & AI Developer",
-    description: "Portfolio of Aakash Singh Rajput, a Senior Blockchain Engineer & AI Developer who builds smart contracts, ZK rollups, and DeFi apps.",
-    siteName: "Aakash Singh Rajput Portfolio",
-    images: [
-      {
-        url: "/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Aakash Singh Rajput — AI and Web3 Engineer",
-      }
-    ]
+    url: siteUrl,
+    title,
+    description,
+    siteName: "Aakash Singh Rajput",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Aakash Singh Rajput, Blockchain and AI Engineer" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aakash Singh Rajput | Senior Blockchain Engineer & AI Developer",
-    description: "Senior Blockchain Engineer & AI Developer who builds smart contracts, ZK rollups, and DeFi apps.",
+    site: "@aakash4dev",
+    creator: "@aakash4dev",
+    title,
+    description,
     images: ["/og.png"],
   },
-  generator: 'v0.dev'
 }
 
 export default function RootLayout({

@@ -1,13 +1,13 @@
 import { MetadataRoute } from 'next'
+import { siteUrl } from '@/lib/site'
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = 'https://aakash4dev.com' // Using the domain specified in the plan
     return {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: '/private/',
         },
-        sitemap: `${baseUrl}/sitemap.xml`,
+        sitemap: `${siteUrl}/sitemap.xml`,
+        host: siteUrl,
     }
 }

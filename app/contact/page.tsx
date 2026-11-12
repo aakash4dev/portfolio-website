@@ -4,12 +4,12 @@ import { ArrowUpRight, Mail, MapPin } from "lucide-react"
 import ContactForm from "@/components/ContactForm"
 import Reveal from "@/components/Reveal"
 import GoToTop from "@/components/GoToTop"
-import { email, socialLinks } from "@/lib/site"
+import { composeUrl, email, siteUrl, socialLinks } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Contact",
   description: "Contact Aakash Singh Rajput about a project, a job, training, or a question about blockchain and AI.",
-  alternates: { canonical: "https://aakash4dev.com/contact" },
+  alternates: { canonical: `${siteUrl}/contact` },
 }
 
 export default function ContactPage() {
@@ -29,7 +29,7 @@ export default function ContactPage() {
 
         <Reveal from="right" delay={0.1}>
           <h2 className="press-contact-title">Other ways to reach me</h2>
-          <a href={`mailto:${email}`} className="press-contact-card"><Mail size={20} /><span><b>Email</b>{email}</span><ArrowUpRight size={18} /></a>
+          <a href={composeUrl()} target="_blank" rel="noopener noreferrer" className="press-contact-card" aria-label={`Write to ${email} in Gmail`}><Mail size={20} /><span><b>Email</b>{email}</span><ArrowUpRight size={18} /></a>
           <p className="press-contact-card"><MapPin size={20} /><span><b>Location</b>Noida, Uttar Pradesh, India</span></p>
           <div className="press-contact-list">{socialLinks.map(([name, href]) => <a key={name} href={href} target="_blank" rel="noopener noreferrer">{name}<ArrowUpRight size={18} /></a>)}</div>
         </Reveal>

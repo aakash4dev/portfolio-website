@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blogs'
+import { siteUrl } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://aakash4dev.com'
+    const baseUrl = siteUrl
 
     // Static routes
     const routes = [
@@ -10,9 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/blogs',
         '/projects',
         '/contact',
-        '/seedfund',
-        '/startups',
-        '/surprise',
         '/tutorials',
     ].map((route) => ({
         url: `${baseUrl}${route}`,

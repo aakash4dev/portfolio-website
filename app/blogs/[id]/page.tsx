@@ -3,10 +3,10 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Calendar, User, Tag, ArrowLeft, ArrowRight, Clock } from "lucide-react"
-import Contact from "@/components/sections/Contact"
 import GoToTop from "@/components/GoToTop"
 import Reveal from "@/components/Reveal"
 import { blogPosts } from "@/lib/blogs"
+import { siteUrl } from "@/lib/site"
 import MarkdownRenderer from "@/components/MarkdownRenderer"
 import type { Metadata } from "next"
 import { articleSections } from "@/lib/headings"
@@ -28,13 +28,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params
   const post = blogPosts.find((entry) => entry.id === id)
   if (!post) return { title: "Article not found" }
-  const url = `https://aakash4dev.com/blogs/${post.id}`
+  const url = `${siteUrl}/blogs/${post.id}`
   const socialImage = post.image.replace(/\.svg$/, ".png")
   return {
     title: post.title,
     description: post.excerpt,
     keywords: post.keywords || post.tags,
-    authors: [{ name: "Aakash Singh Rajput", url: "https://aakash4dev.com" }],
+    authors: [{ name: "Aakash Singh Rajput", url: siteUrl }],
     alternates: { canonical: url },
     openGraph: { title: post.title, description: post.excerpt, type: "article", url, publishedTime: new Date(post.date).toISOString(), authors: ["Aakash Singh Rajput"], tags: post.tags, images: [{ url: socialImage, width: 1200, height: 630, alt: post.imageAlt || post.title }] },
     twitter: { card: "summary_large_image", title: post.title, description: post.excerpt, images: [socialImage] },
@@ -59,7 +59,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
   if (suggestions.length < 3) suggestions.push(...blogPosts.filter((entry) => entry.id !== post.id && !suggestions.includes(entry)).slice(0, 3 - suggestions.length))
   const generatedCover = post.image.startsWith("/blogs/generated/")
   const sections = articleSections(post.content)
-  const url = `https://aakash4dev.com/blogs/${post.id}`
+  const url = `${siteUrl}/blogs/${post.id}`
   const published = new Date(post.date).toISOString()
   // Structured data helps search engines show the article, its author, and its questions and answers.
   const structuredData: object[] = [
@@ -68,21 +68,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
       "@type": "BlogPosting",
       headline: post.title,
       description: post.excerpt,
-      image: `https://aakash4dev.com${post.image.replace(/\.svg$/, ".png")}`,
+      image: `${siteUrl}${post.image.replace(/\.svg$/, ".png")}`,
       datePublished: published,
       dateModified: published,
       mainEntityOfPage: url,
       keywords: (post.keywords || post.tags).join(", "),
       articleSection: post.category,
-      author: { "@type": "Person", name: "Aakash Singh Rajput", url: "https://aakash4dev.com" },
-      publisher: { "@type": "Person", name: "Aakash Singh Rajput", url: "https://aakash4dev.com" },
+      author: { "@type": "Person", name: "Aakash Singh Rajput", url: siteUrl },
+      publisher: { "@type": "Person", name: "Aakash Singh Rajput", url: siteUrl },
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://aakash4dev.com" },
-        { "@type": "ListItem", position: 2, name: "Blog", item: "https://aakash4dev.com/blogs" },
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${siteUrl}/blogs` },
         { "@type": "ListItem", position: 3, name: post.title, item: url },
       ],
     },
@@ -179,12 +179,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                 <div className="flex items-center gap-4 w-full md:w-auto">
                   <span className="text-sm font-semibold text-muted-foreground">Share:</span>
                   <Button variant="outline" size="icon" className="h-10 w-10 rounded-full hover:bg-primary/20 hover:text-primary hover:border-primary" asChild>
-                    <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${post.title}" by @aakash4dev`)}&url=https://aakash4dev.com/blogs/${post.id}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${post.title}" by @aakash4dev`)}&url=${encodeURIComponent(`${siteUrl}/blogs/${post.id}`)}`} target="_blank" rel="noopener noreferrer">
                       <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
                     </a>
                   </Button>
                   <Button variant="outline" size="icon" className="h-10 w-10 rounded-full hover:bg-primary/20 hover:text-primary hover:border-primary" asChild>
-                    <a href={`https://linkedin.com/sharing/share-offsite/?url=https://aakash4dev.com/blogs/${post.id}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`https://linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${siteUrl}/blogs/${post.id}`)}`} target="_blank" rel="noopener noreferrer">
                       <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" /></svg>
                     </a>
                   </Button>
@@ -217,7 +217,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
         </section>
       </div>
     </main>
-    <Contact />
     <GoToTop />
     </>
   )

@@ -16,6 +16,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // These pages were removed. Permanent redirects keep old links and search results working.
+  async redirects() {
+    return [
+      { source: "/startups/:path*", destination: "/", permanent: true },
+      { source: "/seedfund/:path*", destination: "/", permanent: true },
+      { source: "/surprise/:path*", destination: "/", permanent: true },
+    ]
+  },
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
