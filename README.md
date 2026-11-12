@@ -106,7 +106,7 @@ Image sources and credits for the charts in `public/blogs/evidence/` are listed 
 
 The **source code** is released under the [MIT License](LICENSE). You are welcome to learn from it or use it for your own site.
 
-The **articles, personal details, and images** are not covered by the MIT License and remain all rights reserved. See [LICENSE](LICENSE) for the exact list. Please don't republish the articles or use my photos.
+The **articles, personal details, and images** are not covered by the MIT License and remain all rights reserved. See [CONTENT-LICENSE.md](CONTENT-LICENSE.md) for the exact list. Please don't republish the articles or use my photos.
 
 ## Contact
 
