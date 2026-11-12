@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "app/layout.tsx",
+    "app/page.tsx",
+    "app/projects/page.tsx",
+    "app/tutorials/page.tsx",
+    "app/blogs/**/*.tsx",
+    "components/sections/**/*.tsx",
+    "components/site/**/*.tsx",
+    "components/Navbar.tsx",
+    "components/Footer.tsx",
+    "components/GoToTop.tsx",
+    "components/Reveal.tsx",
+    "components/ScrollProgress.tsx",
+    "components/ContactForm.tsx",
+    "app/contact/page.tsx",
+    "app/template.tsx",
+    "components/BlogIndex.tsx",
+    "components/CodeBlock.tsx",
+    "components/MarkdownRenderer.tsx",
+    "lib/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

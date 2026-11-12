@@ -1,0 +1,15 @@
+runtime,trial,elapsed_ms
+Node.js,1,87.4
+Node.js,2,87.981
+Node.js,3,90.964
+Node.js,4,88.925
+Node.js,5,86.739
+Node.js,6,88.002
+Node.js,7,89.952
+CPython,1,202.856
+CPython,2,209.414
+CPython,3,202.646
+CPython,4,202.408
+CPython,5,201.496
+CPython,6,209.659
+CPython,7,205.774

@@ -1,0 +1,55 @@
+{
+  "executed_at_utc": "2026-11-08T10:02:18.185892+00:00",
+  "workload": "Whole-file UTF-8 NDJSON parse and sum of the integer value field",
+  "timing": "Parent wall clock includes process startup, file read, parsing, reduction, JSON result output and shutdown",
+  "records": 200000,
+  "fixture_bytes": 8268890,
+  "fixture_sha256": "6c4a74efce89303712a6d884a2796cfcd578e2702f4377ba561b7e97c3609e12",
+  "expected_result": {
+    "records": 200000,
+    "sum": 9900000
+  },
+  "trials_per_runtime": 7,
+  "excluded_warmups_per_runtime": 1,
+  "order": "Alternating runtime order per trial; warmed filesystem cache",
+  "environment": {
+    "os": "Linux-7.0.0-42-generic-x86_64-with-glibc2.43",
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700H",
+    "logical_cpus": 20,
+    "node": "v24.14.1",
+    "python": "3.14.4"
+  },
+  "limitations": "Single uncontrolled development host; no CPU pinning, frequency lock, load isolation, memory measurement, compiler comparison, or network workload. Runtime/library implementations and startup affect results. Not a universal language ranking.",
+  "results": [
+    {
+      "runtime": "Node.js",
+      "elapsed_ms": [
+        87.4,
+        87.981,
+        90.964,
+        88.925,
+        86.739,
+        88.002,
+        89.952
+      ],
+      "median_ms": 88.002,
+      "min_ms": 86.739,
+      "max_ms": 90.964
+    },
+    {
+      "runtime": "CPython",
+      "elapsed_ms": [
+        202.856,
+        209.414,
+        202.646,
+        202.408,
+        201.496,
+        209.659,
+        205.774
+      ],
+      "median_ms": 202.856,
+      "min_ms": 201.496,
+      "max_ms": 209.659
+    }
+  ]
+}

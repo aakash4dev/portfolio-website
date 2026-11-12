@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "app/blogs/**/*.tsx",
+    "components/BlogIndex.tsx",
+    "components/CodeBlock.tsx",
+    "components/MarkdownRenderer.tsx",
+    "lib/blog-types.ts",
+    "lib/blogs.ts",
+    "lib/content/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

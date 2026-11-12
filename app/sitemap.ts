@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '',
         '/blogs',
         '/projects',
+        '/contact',
         '/seedfund',
         '/startups',
         '/surprise',

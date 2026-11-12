@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "blogs:build": "node scripts/build-blog-content.cjs && node scripts/generate-blog-covers.cjs && node scripts/validate-blogs.cjs",
+    "blogs:covers": "node scripts/generate-blog-covers.cjs",
+    "blogs:check": "node scripts/validate-blogs.cjs && tsc --project tsconfig.blogs.json --incremental false",
+    "site:check": "node scripts/validate-blogs.cjs && tsc --project tsconfig.site.json --incremental false"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

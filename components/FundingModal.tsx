@@ -31,7 +31,7 @@ const fundingTiers = [
     name: "Backer",
     amount: 500,
     benefits: ["All Supporter benefits", "Exclusive monthly newsletter", "Digital badge for your profile"],
-    icon: <Star className="h-5 w-5 text-blue-500" />,
+    icon: <Star className="h-5 w-5 text-primary" />,
   },
   {
     id: "tier3",
@@ -43,7 +43,7 @@ const fundingTiers = [
       "Early access to beta features",
       "Voting rights on certain project decisions",
     ],
-    icon: <Star className="h-5 w-5 text-purple-500" />,
+    icon: <Star className="h-5 w-5 text-primary" />,
   },
   {
     id: "tier4",

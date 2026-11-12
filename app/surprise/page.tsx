@@ -97,7 +97,7 @@ const adventureActivities = [
     description: "Experience the ultimate free fall from 14,000 feet with breathtaking views.",
     image: "/placeholder.svg?height=400&width=600",
     icon: <Plane className="h-6 w-6" />,
-    color: "from-blue-500 to-cyan-400",
+    color: "from-primary to-primary",
     locations: ["Dubai", "New Zealand", "Switzerland"],
     difficulty: "High",
     duration: "1 day",
@@ -111,7 +111,7 @@ const adventureActivities = [
     description: "Explore vibrant coral reefs and marine life in crystal clear waters.",
     image: "/placeholder.svg?height=400&width=600",
     icon: <Waves className="h-6 w-6" />,
-    color: "from-cyan-500 to-blue-600",
+    color: "from-primary to-primary",
     locations: ["Great Barrier Reef", "Maldives", "Thailand"],
     difficulty: "Medium",
     duration: "1-3 days",
@@ -153,7 +153,7 @@ const adventureActivities = [
     description: "Navigate through rushing rapids and experience the power of wild rivers.",
     image: "/placeholder.svg?height=400&width=600",
     icon: <Sailboat className="h-6 w-6" />,
-    color: "from-blue-600 to-indigo-600",
+    color: "from-primary to-primary",
     locations: ["Colorado", "Costa Rica", "New Zealand"],
     difficulty: "Medium",
     duration: "1 day",
@@ -167,7 +167,7 @@ const adventureActivities = [
     description: "Soar through the skies and enjoy panoramic views of breathtaking landscapes.",
     image: "/placeholder.svg?height=400&width=600",
     icon: <Wind className="h-6 w-6" />,
-    color: "from-sky-400 to-blue-500",
+    color: "from-primary to-primary",
     locations: ["Switzerland", "Nepal", "France"],
     difficulty: "Medium",
     duration: "Half day",
@@ -181,7 +181,7 @@ const adventureActivities = [
     description: "Ride the waves and experience the thrill of ocean surfing.",
     image: "/placeholder.svg?height=400&width=600",
     icon: <Waves className="h-6 w-6" />,
-    color: "from-blue-400 to-teal-500",
+    color: "from-primary to-primary",
     locations: ["Hawaii", "Australia", "Indonesia"],
     difficulty: "Medium",
     duration: "1-7 days",
@@ -242,8 +242,8 @@ console.log("Squared Values:", squares);`,
   {
     id: "python",
     name: "Python",
-    icon: <FilePythonIcon className="h-5 w-5 text-blue-500" />,
-    color: "bg-blue-500",
+    icon: <FilePythonIcon className="h-5 w-5 text-primary" />,
+    color: "bg-primary",
     defaultCode: `# Interactive Python Code
 def generate_fibonacci(n):
     sequence = [0, 1]
@@ -302,7 +302,7 @@ print("Squared Values:", squares)`,
     }
     
     .card-header {
-      background: linear-gradient(to right, #3b82f6, #8b5cf6);
+      background: #c93623;
       color: white;
       padding: 15px 20px;
     }
@@ -314,7 +314,7 @@ print("Squared Values:", squares)`,
     
     .btn {
       display: inline-block;
-      background-color: #3b82f6;
+      background-color: #c93623;
       color: white;
       border: none;
       padding: 8px 16px;
@@ -470,7 +470,7 @@ const devTips = [
     title: "Code Readability Matters",
     content:
       "Write code for humans first, machines second. Use meaningful variable names, add comments for complex logic, and follow consistent formatting conventions.",
-    icon: <FileEdit className="h-8 w-8 text-blue-500" />,
+    icon: <FileEdit className="h-8 w-8 text-primary" />,
     tags: ["best practices", "readability", "maintenance"],
   },
   {
@@ -494,7 +494,7 @@ const devTips = [
     title: "Continuous Learning",
     content:
       "Technology evolves rapidly. Dedicate time each week to learn new tools, languages, or frameworks. Follow tech blogs, join communities, and contribute to open source.",
-    icon: <BookOpen className="h-8 w-8 text-purple-500" />,
+    icon: <BookOpen className="h-8 w-8 text-primary" />,
     tags: ["learning", "growth", "community"],
   },
   {
@@ -510,7 +510,7 @@ const devTips = [
     title: "Performance Optimization",
     content:
       "Measure before optimizing. Use profiling tools to identify bottlenecks, then focus on optimizing the critical paths rather than premature optimization.",
-    icon: <Gauge className="h-8 w-8 text-cyan-500" />,
+    icon: <Gauge className="h-8 w-8 text-primary" />,
     tags: ["performance", "optimization", "profiling"],
   },
   {
@@ -518,7 +518,7 @@ const devTips = [
     title: "Embrace Code Reviews",
     content:
       "Code reviews improve quality and spread knowledge. Be open to feedback, ask questions, and use reviews as learning opportunities for everyone involved.",
-    icon: <Users className="h-8 w-8 text-indigo-500" />,
+    icon: <Users className="h-8 w-8 text-primary" />,
     tags: ["collaboration", "quality", "learning"],
   },
 ]
@@ -531,7 +531,7 @@ const toolsData = [
     description: "Powerful, extensible code editor with rich ecosystem of plugins",
     category: "Development",
     url: "https://code.visualstudio.com/",
-    icon: <Code className="h-10 w-10 text-blue-500" />,
+    icon: <Code className="h-10 w-10 text-primary" />,
     tags: ["editor", "IDE", "coding"],
   },
   {
@@ -549,7 +549,7 @@ const toolsData = [
     description: "Platform for developing, shipping, and running applications in containers",
     category: "DevOps",
     url: "https://www.docker.com/",
-    icon: <Box className="h-10 w-10 text-blue-600" />,
+    icon: <Box className="h-10 w-10 text-primary" />,
     tags: ["containers", "deployment", "infrastructure"],
   },
   {
@@ -558,7 +558,7 @@ const toolsData = [
     description: "Collaborative interface design tool for creating UI/UX designs",
     category: "Design",
     url: "https://www.figma.com/",
-    icon: <Palette className="h-10 w-10 text-purple-500" />,
+    icon: <Palette className="h-10 w-10 text-primary" />,
     tags: ["design", "UI/UX", "prototyping"],
   },
   {
@@ -1057,7 +1057,7 @@ function WishlistSection() {
     <div className="glass rounded-xl p-6 overflow-hidden">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center">
-          <Mountain className="h-6 w-6 text-cyan-500 mr-2" />
+          <Mountain className="h-6 w-6 text-primary mr-2" />
           <h2 className="text-2xl font-bold">Adventure Wishlist</h2>
         </div>
 
@@ -1133,7 +1133,7 @@ function WishlistSection() {
             </div>
 
             <div className="flex gap-2">
-              <Button type="submit" className="bg-gradient-to-r from-cyan-500 to-blue-600">
+              <Button type="submit" className="bg-gradient-to-r from-primary to-primary">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Adventure
               </Button>
@@ -1226,7 +1226,7 @@ function WishlistSection() {
                     ? "bg-red-900/10 border border-red-500/30"
                     : item.priority === "Medium"
                       ? "bg-yellow-900/10 border border-yellow-500/30"
-                      : "bg-blue-900/10 border border-blue-500/30"
+                      : "bg-primary/10 border border-primary/30"
                 }`}
             >
               <div className="flex items-start gap-3">
@@ -1261,7 +1261,7 @@ function WishlistSection() {
                           ? "bg-red-500/20 text-red-500"
                           : item.priority === "Medium"
                             ? "bg-yellow-500/20 text-yellow-500"
-                            : "bg-blue-500/20 text-blue-500"
+                            : "bg-primary/20 text-primary"
                         }`}
                     >
                       <Star className="h-3 w-3" />
@@ -1528,7 +1528,7 @@ Process completed with exit code 0.`
             variant={selectedLanguage === language.id ? "default" : "outline"}
             size="sm"
             onClick={() => setSelectedLanguage(language.id)}
-            className={selectedLanguage === language.id ? "bg-gradient-to-r from-blue-500 to-indigo-600" : ""}
+            className={selectedLanguage === language.id ? "bg-gradient-to-r from-primary to-primary" : ""}
           >
             {language.icon}
             <span className="ml-2">{language.name}</span>
@@ -2149,7 +2149,7 @@ function RecommendationsComponent() {
   return (
     <div className="glass rounded-xl p-6 overflow-hidden">
       <div className="flex items-center mb-6">
-        <Sparkles className="h-6 w-6 text-purple-500 mr-2" />
+        <Sparkles className="h-6 w-6 text-primary mr-2" />
         <h2 className="text-2xl font-bold">Personalized Recommendations</h2>
       </div>
 
@@ -2453,7 +2453,7 @@ export default function SurprisePage() {
             title="Code Playground"
             description="Experiment with different programming languages in an interactive code editor."
             icon={<Code className="h-8 w-8 text-white" />}
-            color="bg-gradient-to-br from-blue-500 to-indigo-600"
+            color="bg-gradient-to-br from-primary to-primary"
             onClick={() => scrollToSection(codeRef)}
           />
 
@@ -2461,7 +2461,7 @@ export default function SurprisePage() {
             title="Personalized Recommendations"
             description="Discover new adventures and activities based on your interests and preferences."
             icon={<Sparkles className="h-8 w-8 text-white" />}
-            color="bg-gradient-to-br from-purple-500 to-violet-600"
+            color="bg-gradient-to-br from-primary to-primary"
             onClick={() => setActiveSection("recommendations")}
           />
         </div>
@@ -2495,7 +2495,7 @@ export default function SurprisePage() {
       {/* Code Section */}
       <section ref={codeRef} className="mb-20">
         <h2 className="text-3xl font-bold mb-6">
-          <Code className="h-6 w-6 inline-block mr-2 text-blue-500" />
+          <Code className="h-6 w-6 inline-block mr-2 text-primary" />
           Code
         </h2>
 

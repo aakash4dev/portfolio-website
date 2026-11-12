@@ -1,0 +1,77 @@
+{
+  "retrievedAt": "2026-11-08",
+  "evidence": [
+    {
+      "path": "/blogs/evidence/stackoverflow-2025.png",
+      "kind": "original publisher chart download",
+      "source": "https://survey.stackoverflow.co/2025/technology/",
+      "assetUrl": "https://survey.stackoverflow.co/2025/charts/stackoverflow-dev-survey-2025-technology-most-popular-technologies-language-language-social.png",
+      "measurement": "2025 survey, all respondents, 31771 answers to language question",
+      "credit": "Stack Overflow Developer Survey 2025; data licensed under ODbL as credited in original chart",
+      "notes": "Unmodified publisher chart, not a browser screenshot; survey usage is not execution speed."
+    },
+    {
+      "path": "/blogs/evidence/stanford-ai-index.png",
+      "kind": "report page screenshot rendered from original PDF",
+      "source": "https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_2_technical.pdf",
+      "page": 78,
+      "pdfPage": 11,
+      "figure": "2.1.4",
+      "measurement": "March 2026 Arena historical leaderboard, Public Style Control On",
+      "credit": "Stanford HAI, AI Index Report 2026; original chart source Arena 2026",
+      "render": "pdftoppm -f 11 -l 11 -scale-to 2000 -singlefile -png",
+      "notes": "Whole page preserved with axes, figure number and source footnote."
+    },
+    {
+      "path": "/blogs/evidence/ai-arena-original.jpg",
+      "kind": "original publisher chart image",
+      "source": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+      "assetUrl": "https://hai.stanford.edu/assets/images/fig_214.jpg",
+      "measurement": "March 2026 snapshot",
+      "credit": "Stanford HAI, 2026 AI Index; Arena 2026"
+    },
+    {
+      "path": "/blogs/evidence/language-benchmark.png",
+      "kind": "plot of actual local measurements, not a generated illustration",
+      "source": "scripts/benchmarks/run-language-benchmark.py",
+      "rawData": "/blogs/evidence/language-benchmark.json",
+      "csv": "/blogs/evidence/language-benchmark.csv",
+      "measurement": "November 8, 2026; 200000 NDJSON records; seven whole-process wall-time measurements per runtime after one excluded warm-up",
+      "credit": "Local experiment in this repository; matplotlib plot",
+      "notes": "Machine, runtime versions, fixture SHA-256, correctness result and limitations are recorded in JSON. Single development host, not a universal language ranking."
+    }
+  ],
+  "illustrations": {
+    "tool": "built-in image_gen.imagegen",
+    "type": "AI-generated conceptual illustrations; never measurement evidence",
+    "prompts": [
+      {
+        "path": "/blogs/illustrations/ai-evaluation.png",
+        "prompt": "Use case: stylized-concept. Asset type: wide editorial illustration for a technical blog article about evaluating artificial intelligence models. Primary request: a polished 3D conceptual scene of several abstract neural processors on a dark navy laboratory workbench, each connected to different test instruments representing accuracy, latency and cost. Cyan, violet and subtle amber lighting, clean sophisticated technical editorial aesthetic, wide landscape composition. No text, no letters, no numbers, no logos, no fake charts or statistics. This is an illustration, not real analytics. Save generated output for project use."
+      },
+      {
+        "path": "/blogs/illustrations/web3-infrastructure.png",
+        "prompt": "Use case: stylized-concept. Asset type: wide technical editorial blog illustration. A conceptual decentralized infrastructure scene: luminous glass blocks linked into a distributed network, a few nodes in foreground, subtle cryptographic geometry. No currency coins or brand logos. Sophisticated 3D render, dark navy backdrop, cyan and violet lighting, restrained amber accents, uncluttered landscape composition, high quality material textures. No text, no letters, no numbers, no charts, no watermark. Conceptual illustration only, not factual analytics."
+      },
+      {
+        "path": "/blogs/illustrations/programming-languages.png",
+        "prompt": "Use case: stylized-concept. Asset type: wide technical editorial blog illustration. A conceptual language engineering scene: distinct colored abstract syntax structures fitting together like precise modular mechanisms on a dark workbench. Show transformation and type structure without any literal code or letters. Sophisticated 3D render, dark navy backdrop, cyan and violet lighting, restrained amber accents, uncluttered landscape composition, high quality material textures. No text, no letters, no numbers, no charts, no watermark. Conceptual illustration only, not factual analytics."
+      },
+      {
+        "path": "/blogs/illustrations/cloud-hosting.png",
+        "prompt": "Use case: stylized-concept. Asset type: wide technical editorial blog illustration. A conceptual cloud hosting scene: elegant miniature server racks connected through glowing edge nodes around an abstract globe, emphasizing routing, resilience and deployment. No logos. Sophisticated 3D render, dark navy backdrop, cyan and violet lighting, restrained amber accents, uncluttered landscape composition, high quality material textures. No text, no letters, no numbers, no charts, no watermark. Conceptual illustration only, not factual analytics."
+      },
+      {
+        "path": "/blogs/illustrations/developer-tools.png",
+        "prompt": "Use case: stylized-concept. Asset type: wide technical editorial blog illustration. A conceptual developer toolchain scene: a modular pipeline of polished mechanical and glass tools, version branches feeding a test chamber then a deployment port, technical but approachable. No logos. Sophisticated 3D render, dark navy backdrop, cyan and violet lighting, restrained amber accents, uncluttered landscape composition, high quality material textures. No text, no letters, no numbers, no charts, no watermark. Conceptual illustration only, not factual analytics."
+      }
+    ],
+    "display": "Original files preserved and shown in full color. Published source evidence images retain their original presentation."
+  },
+  "covers": {
+    "path": "/blogs/generated/*.svg",
+    "kind": "100 generated cover illustrations, one per article",
+    "generator": "scripts/generate-blog-covers.cjs",
+    "notes": "Each cover is drawn from the scene named in the article's cover line, in one of seven styles, with the author's name as a faded mark. Icons are from Lucide (ISC license). PNG copies are made from the same SVG files for social sharing."
+  }
+}

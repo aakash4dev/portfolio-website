@@ -1,263 +1,88 @@
 "use client"
 
-import { useRef, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowDown } from "lucide-react"
+import Link from "next/link"
+import { useRef, useState, type PointerEvent } from "react"
+import { motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion"
+import { ArrowRight, ArrowUpRight, Github, Layers, Minus, Youtube } from "lucide-react"
 
 export default function Hero() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>(0)
+  const section = useRef<HTMLElement>(null)
+  const [unfolded, setUnfolded] = useState(false)
+  const reduceMotion = useReducedMotion()
+  const pointerX = useMotionValue(7)
+  const pointerY = useMotionValue(-13)
+  const rotateX = useSpring(pointerX, { stiffness: 130, damping: 24 })
+  const rotateY = useSpring(pointerY, { stiffness: 130, damping: 24 })
+  const { scrollYProgress } = useScroll({ target: section, offset: ["start start", "end start"] })
+  const rise = useTransform(scrollYProgress, [0, 1], [0, -65])
 
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-
-    // Define colors directly with RGB values
-    const planetColors = {
-      blue: { r: 59, g: 130, b: 246 },
-      green: { r: 16, g: 185, b: 129 },
-      red: { r: 244, g: 63, b: 94 },
-      purple: { r: 139, g: 92, b: 246 },
-      orange: { r: 245, g: 158, b: 11 },
-    }
-
-    // Planet class
-    class Planet {
-      x: number
-      y: number
-      radius: number
-      color: { r: number; g: number; b: number }
-      alpha: number
-      orbitRadius: number
-      orbitSpeed: number
-      angle: number
-      glowIntensity: number
-      glowDirection: number
-      centerX: number
-      centerY: number
-
-      constructor(
-        centerX: number,
-        centerY: number,
-        orbitRadius: number,
-        radius: number,
-        color: { r: number; g: number; b: number },
-        alpha: number,
-        orbitSpeed: number,
-      ) {
-        this.centerX = centerX
-        this.centerY = centerY
-        this.orbitRadius = orbitRadius
-        this.radius = radius
-        this.color = color
-        this.alpha = alpha
-        this.orbitSpeed = orbitSpeed
-        this.angle = Math.random() * Math.PI * 2
-        this.x = this.centerX + Math.cos(this.angle) * this.orbitRadius
-        this.y = this.centerY + Math.sin(this.angle) * this.orbitRadius
-        this.glowIntensity = 0.5
-        this.glowDirection = Math.random() > 0.5 ? 0.005 : -0.005
-      }
-
-      update() {
-        this.angle += this.orbitSpeed
-        this.x = this.centerX + Math.cos(this.angle) * this.orbitRadius
-        this.y = this.centerY + Math.sin(this.angle) * this.orbitRadius
-
-        // Pulsating glow effect
-        this.glowIntensity += this.glowDirection
-        if (this.glowIntensity > 0.8 || this.glowIntensity < 0.3) {
-          this.glowDirection *= -1
-        }
-      }
-
-      draw(ctx: CanvasRenderingContext2D) {
-        const { r, g, b } = this.color
-
-        // Create gradient with proper rgba values
-        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius * 2)
-
-        gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${this.alpha})`)
-        gradient.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, ${this.glowIntensity * this.alpha})`)
-        gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`)
-
-        // Draw the planet
-        ctx.beginPath()
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${this.alpha})`
-        ctx.fill()
-
-        // Draw the glow
-        ctx.beginPath()
-        ctx.arc(this.x, this.y, this.radius * 2, 0, Math.PI * 2)
-        ctx.fillStyle = gradient
-        ctx.fill()
-      }
-    }
-
-    // Star class for background
-    class Star {
-      x: number
-      y: number
-      size: number
-      opacity: number
-      opacityChange: number
-
-      constructor() {
-        this.x = Math.random() * canvas!.width
-        this.y = Math.random() * canvas!.height
-        this.size = Math.random() * 1.5 + 0.5
-        this.opacity = Math.random() * 0.8 + 0.2
-        this.opacityChange = Math.random() * 0.01 + 0.005
-      }
-
-      update() {
-        this.opacity += this.opacityChange
-        if (this.opacity > 1 || this.opacity < 0.2) {
-          this.opacityChange *= -1
-        }
-      }
-
-      draw(ctx: CanvasRenderingContext2D) {
-        ctx.beginPath()
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`
-        ctx.fill()
-      }
-    }
-
-    // Position the animation in the top-right corner
-    const cornerX = canvas.width * 0.85
-    const cornerY = canvas.height * 0.25
-
-    // Create planets with direct RGB values - positioned in the corner
-    const planets = [
-      // Center sun/main orb in the corner
-      new Planet(cornerX, cornerY, 0, 30, planetColors.blue, 0.8, 0),
-      // Orbiting planets
-      new Planet(cornerX, cornerY, 60, 8, planetColors.green, 0.7, 0.005),
-      new Planet(cornerX, cornerY, 100, 12, planetColors.red, 0.7, 0.003),
-      new Planet(cornerX, cornerY, 140, 10, planetColors.purple, 0.7, 0.002),
-      new Planet(cornerX, cornerY, 180, 6, planetColors.orange, 0.7, 0.004),
-    ]
-
-    // Create stars
-    const stars: Star[] = []
-    for (let i = 0; i < 100; i++) {
-      stars.push(new Star())
-    }
-
-    // Handle window resize
-    const handleResize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-
-      // Update corner position on resize
-      const newCornerX = canvas.width * 0.85
-      const newCornerY = canvas.height * 0.25
-
-      // Update planet positions
-      planets[0].centerX = newCornerX
-      planets[0].centerY = newCornerY
-
-      planets.forEach((planet) => {
-        planet.centerX = newCornerX
-        planet.centerY = newCornerY
-      })
-    }
-
-    window.addEventListener("resize", handleResize)
-
-    // Animation loop
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-      // Draw stars
-      stars.forEach((star) => {
-        star.update()
-        star.draw(ctx)
-      })
-
-      // Draw orbit paths with reduced opacity
-      planets.slice(1).forEach((planet) => {
-        ctx.beginPath()
-        ctx.arc(planet.centerX, planet.centerY, planet.orbitRadius, 0, Math.PI * 2)
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.05)"
-        ctx.stroke()
-      })
-
-      // Update and draw planets
-      planets.forEach((planet) => {
-        planet.update()
-        planet.draw(ctx)
-      })
-
-      animationRef.current = requestAnimationFrame(animate)
-    }
-
-    animate()
-
-    return () => {
-      window.removeEventListener("resize", handleResize)
-      cancelAnimationFrame(animationRef.current)
-    }
-  }, [])
-
-  const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+  function move(event: PointerEvent<HTMLDivElement>) {
+    if (reduceMotion || event.pointerType !== "mouse") return
+    const box = event.currentTarget.getBoundingClientRect()
+    pointerX.set(7 - ((event.clientY - box.top) / box.height - 0.5) * 9)
+    pointerY.set(-13 + ((event.clientX - box.left) / box.width - 0.5) * 12)
   }
 
+  function reset() { pointerX.set(7); pointerY.set(-13) }
+  const transition = { duration: reduceMotion ? 0 : 0.55, ease: "easeOut" as const }
+
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Canvas for 2D animation */}
-      <canvas ref={canvasRef} className="absolute inset-0 z-0" />
-
-      {/* Content */}
-      <div className="z-10 text-center px-4 md:px-8 max-w-4xl">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 glow-text">
-            Hi, I'm <span className="gradient-text">Aakash Singh Rajput</span>
+    <section ref={section} id="home" className="press-hero press-container">
+      <motion.div className="press-hero-kicker" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}><span className="press-square press-pulse" /> Senior Blockchain Engineer and AI Developer</motion.div>
+      <div className="press-hero-grid">
+        <div className="press-hero-type">
+          <h1 className="press-headline" aria-label="Build. Write. Teach.">
+            {["BUILD.", "WRITE.", "TEACH."].map((word, index) => (
+              <motion.span key={word} className={index === 2 ? "press-ship" : undefined} initial={{ opacity: 0, y: 46 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.12 + index * 0.14, ease: [0.2, 0.7, 0.2, 1] }}>{word}</motion.span>
+            ))}
           </h1>
+          <motion.div className="press-hero-intro" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }}>
+            <p className="press-name">Aakash Singh Rajput<span>AI & Web3 Engineer</span></p>
+            <p>I build software,<br className="hidden sm:block" /> write articles about how it works,<br className="hidden sm:block" /> and make tutorials.</p>
+          </motion.div>
+          <motion.div className="press-hero-links" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.75 }}>
+            <Link href="/projects" className="press-button">See my projects <ArrowRight size={17} /></Link>
+            <Link href="/blogs" className="press-text-link">Read my blog <ArrowUpRight size={17} /></Link>
+            <Link href="/contact" className="press-text-link">Contact me <ArrowUpRight size={17} /></Link>
+          </motion.div>
+        </div>
 
-          <h2 className="text-xl md:text-2xl mb-6 font-bold text-white">
-            Senior <span className="text-primary">Blockchain Engineer</span> & <span className="text-purple-500">AI Developer</span>
-          </h2>
+        <motion.div className="press-stage-wrap" initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}>
+          <div className="press-stage" onPointerMove={move} onPointerLeave={reset}>
+            <motion.div className="press-browser" style={{ rotateX: reduceMotion ? 0 : rotateX, rotateY: reduceMotion ? 0 : rotateY, rotateZ: reduceMotion ? 0 : -4, y: reduceMotion ? 0 : rise }}>
+              <div className="press-browser-bar"><span className="press-browser-dots" aria-hidden="true"><i /><i /><i /></span><span>aakash4dev.com</span><Minus size={14} /></div>
+              <div className="press-browser-depth" aria-hidden="true" />
 
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Specializing in
-            <span className="text-primary font-mono"> Smart Contract Development</span>,
-            <span className="text-green-500 font-mono"> ZK-Sequencers</span>, and
-            <span className="text-purple-500 font-mono"> DeFi Architecture</span>.
-          </p>
+              <motion.div className="press-sheet press-code-sheet" initial={false} animate={{ z: unfolded ? 70 : 35, y: unfolded ? -15 : 0, rotateX: unfolded && !reduceMotion ? 5 : 0 }} transition={transition}>
+                <div className="press-sheet-label"><span>/ code</span><span>01</span></div>
+                <div className="press-code-preview" aria-label="Illustrative code listing">
+                  <span><b>1</b> <em>const</em> focus = [</span>
+                  <span><b>2</b>   <strong>"AI"</strong>, <strong>"Web3"</strong>,</span>
+                  <span><b>3</b>   <strong>"useful software"</strong></span>
+                  <span><b>4</b> ];</span>
+                </div>
+              </motion.div>
 
-          <div className="flex justify-center">
-            <Button variant="outline" size="lg" onClick={scrollToAbout}>
-              Explore My Work
-              <ArrowDown className="ml-2 h-4 w-4 animate-bounce" />
-            </Button>
+              <motion.div className="press-sheet press-project-sheet" initial={false} animate={{ z: unfolded ? 115 : 75, y: 0, rotateX: unfolded && !reduceMotion ? -3 : 0 }} transition={transition}>
+                <Link href="/projects" className="press-sheet-link">
+                  <div><div className="press-sheet-label"><span>/ project</span><ArrowUpRight size={16} /></div><h2>TheDevKits</h2><p>Free online tools<br />for developers.</p></div>
+                  <div className="press-sheet-image"><img src="/projects/thedevkits.png" alt="Screenshot of TheDevKits website" width="240" height="160" /></div>
+                </Link>
+              </motion.div>
+
+              <motion.div className="press-sheet press-article-sheet" initial={false} animate={{ z: unfolded ? 165 : 115, y: unfolded ? 15 : 0, rotateX: unfolded && !reduceMotion ? -6 : 0 }} transition={transition}>
+                <Link href="/blogs/understanding-fhe-in-blockchain" className="press-sheet-link">
+                  <div><div className="press-sheet-label"><span>/ article</span><ArrowUpRight size={16} /></div><h2>What is FHE<br />in blockchain?</h2><p>A simple guide to encrypted data.</p></div>
+                  <div className="press-sheet-image"><img src="/blogs/fhe.png" alt="Cover image of the FHE article" width="240" height="160" /></div>
+                </Link>
+              </motion.div>
+              <div className="press-browser-bottom"><span>Code / Projects / Blog</span><span>Move your mouse over the card</span></div>
+            </motion.div>
           </div>
+          <button type="button" className="press-unfold" onClick={() => setUnfolded(!unfolded)} aria-pressed={unfolded}><Layers size={15} /> {unfolded ? "Close the cards" : "Open the cards"}<span aria-hidden="true">↗</span></button>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
-          className="flex flex-col items-center"
-        >
-          <p className="text-sm mb-2 text-muted-foreground">Scroll Down</p>
-          <ArrowDown className="h-5 w-5 text-primary" />
-        </motion.div>
-      </div>
+      <div className="press-hero-bottom"><span>Find me online:</span><div><a href="https://github.com/aakash4dev" target="_blank" rel="noopener noreferrer"><Github size={15} /> GitHub <ArrowUpRight size={13} /></a><a href="https://www.youtube.com/@aakash4dev" target="_blank" rel="noopener noreferrer"><Youtube size={16} /> YouTube <ArrowUpRight size={13} /></a></div></div>
     </section>
   )
 }
-

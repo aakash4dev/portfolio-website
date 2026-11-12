@@ -18,13 +18,13 @@ export default function FloatingContact() {
       name: "LinkedIn",
       icon: <Linkedin className="h-5 w-5" />,
       url: "https://linkedin.com/in/aakash4dev",
-      color: "hover:bg-blue-600",
+      color: "hover:bg-primary",
     },
     {
       name: "Twitter",
       icon: <Twitter className="h-5 w-5" />,
       url: "https://x.com/aakash4dev",
-      color: "hover:bg-sky-500",
+      color: "hover:bg-primary",
     },
     {
       name: "Email",

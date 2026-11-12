@@ -1,21 +1,17 @@
-export interface BlogPost {
-  id: string
-  title: string
-  excerpt: string
-  category: string
-  date: string
-  author: string
-  image: string
-  tags: string[]
-  content: string
-}
+import type { BlogPost } from "./blog-types"
+import { articles } from "./content/articles"
 
+export type { BlogPost, BlogSummary } from "./blog-types"
+
+// The 100 researched articles come from content/blog/ (see scripts/build-blog-content.cjs).
+// The five older articles below are written here by hand.
 export const blogPosts: BlogPost[] = [
+  ...articles,
   {
     id: "understanding-fhe-in-blockchain",
     title: "Understanding Fully Homomorphic Encryption (FHE) in Blockchain",
-    excerpt: "FHE is like a superpower for privacy — it lets nodes compute on encrypted data without ever seeing it. Here's a practical intro.",
-    category: "FHE",
+    excerpt: "FHE lets blockchain nodes do math on encrypted data without reading it. This article explains how it works and where it is used.",
+    category: "Blockchain",
     date: "February 15, 2026",
     author: "Aakash",
     image: "/blogs/fhe.png",
@@ -127,8 +123,8 @@ If you're building in the Web3 space and care about privacy, now is the time to 
   {
     id: "zero-knowledge-proofs-zk-rollups",
     title: "Zero-Knowledge Proofs: A Deep Dive into ZK-Rollups",
-    excerpt: "ZK-Rollups let you batch execution off-chain and publish a tiny proof on L1 that the execution was correct — fast, cheap, and secure.",
-    category: "ZK",
+    excerpt: "ZK rollups run many transactions off the main chain, then post one small proof that they were correct. This makes them fast and cheap.",
+    category: "Blockchain",
     date: "February 10, 2026",
     author: "Aakash",
     image: "/blogs/zk-rollups.png",
@@ -306,8 +302,8 @@ If you're building on Ethereum, you should be thinking about ZK-Rollups. They're
   {
     id: "building-bft-consensus-in-go",
     title: "Building Byzantine Fault Tolerant Consensus in Go",
-    excerpt: "Building consensus is like herding cats that may be traitors. Practical notes from implementing BFT systems and why Go is a great fit.",
-    category: "Consensus",
+    excerpt: "How to make blockchain nodes agree even when some of them fail or lie. What I learned building BFT consensus in Go.",
+    category: "Blockchain",
     date: "February 5, 2026",
     author: "Aakash",
     image: "/blogs/bft.png",
@@ -591,8 +587,8 @@ The blockchain industry needs more engineers who deeply understand consensus. It
   {
     id: "exploring-cosmos-ecosystem",
     title: "Exploring the Cosmos Ecosystem: Building Interoperable Blockchains",
-    excerpt: "What if every blockchain could talk to every other blockchain? Cosmos is making that possible. Here's why we chose it for Junction.",
-    category: "Cosmos",
+    excerpt: "Cosmos lets separate blockchains send data and tokens to each other. This article explains how, and why we used it for Junction.",
+    category: "Blockchain",
     date: "January 28, 2026",
     author: "Aakash",
     image: "/blogs/cosmos.png",
@@ -873,8 +869,8 @@ The Internet of Blockchains is not just a vision anymore — it's being built, o
   {
     id: "smart-contract-security-and-optimization",
     title: "Smart Contract Development: Best Practices for Security and Efficiency",
-    excerpt: "Smart contracts aren't like regular software. One bug means people lose real money. Here's how I avoid writing expensive disasters.",
-    category: "Development",
+    excerpt: "A bug in a smart contract can lose real money. These are the steps I follow to write safe and cheap-to-run contracts.",
+    category: "Blockchain",
     date: "January 20, 2026",
     author: "Aakash",
     image: "/blogs/smart-contracts.png",

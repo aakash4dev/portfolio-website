@@ -1,17 +1,21 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import { Inter, JetBrains_Mono } from "next/font/google"
+import { Poppins, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
-import DynamicBackground from "@/components/DynamicBackground"
+import MotionProvider from "@/components/site/MotionProvider"
+import ScrollProgress from "@/components/ScrollProgress"
 import { Analytics } from '@vercel/analytics/next';
 
 
-const inter = Inter({
+// Poppins is used for all text: headings and body.
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-body",
 })
 
 const jetbrainsMono = JetBrains_Mono({
@@ -25,7 +29,7 @@ export const metadata: Metadata = {
     default: "Aakash Singh Rajput | Senior Blockchain Engineer & AI Developer",
     template: "%s | Aakash Singh Rajput"
   },
-  description: "Portfolio of Aakash Singh Rajput, a Senior Blockchain Engineer & AI Developer specializing in Smart Contract Development, ZK-Sequencers, and DeFi Architecture.",
+  description: "Portfolio of Aakash Singh Rajput, a Senior Blockchain Engineer & AI Developer who builds smart contracts, ZK rollups, and DeFi apps.",
   keywords: ["Blockchain", "AI", "Smart Contracts", "ZK-Rollups", "DeFi", "Full Stack Developer", "Aakash Singh Rajput"],
   authors: [{ name: "Aakash Singh Rajput" }],
   creator: "Aakash Singh Rajput",
@@ -34,22 +38,22 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://aakash4dev.com",
     title: "Aakash Singh Rajput | Senior Blockchain Engineer & AI Developer",
-    description: "Portfolio of Aakash Singh Rajput, a Senior Blockchain Engineer & AI Developer specializing in Smart Contract Development, ZK-Sequencers, and DeFi Architecture.",
+    description: "Portfolio of Aakash Singh Rajput, a Senior Blockchain Engineer & AI Developer who builds smart contracts, ZK rollups, and DeFi apps.",
     siteName: "Aakash Singh Rajput Portfolio",
     images: [
       {
-        url: "/me_coding.png",
+        url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Aakash Singh Rajput Portfolio",
+        alt: "Aakash Singh Rajput — AI and Web3 Engineer",
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Aakash Singh Rajput | Senior Blockchain Engineer & AI Developer",
-    description: "Senior Blockchain Engineer & AI Developer specializing in Smart Contract Development, ZK-Sequencers, and DeFi Architecture.",
-    images: ["/me_coding.png"],
+    description: "Senior Blockchain Engineer & AI Developer who builds smart contracts, ZK rollups, and DeFi apps.",
+    images: ["/og.png"],
   },
   generator: 'v0.dev'
 }
@@ -60,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Script
           async
@@ -69,14 +73,17 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans`}>
-        <div className="min-h-screen bg-gradient-to-b from-background to-background/90 text-foreground">
-          <DynamicBackground />
+      <body className={`${poppins.variable} ${jetbrainsMono.variable} font-sans`}>
+        <MotionProvider>
+        <div className="site-shell">
+          <a href="#main-content" className="press-skip-link">Skip to content</a>
+          <ScrollProgress />
           <Navbar />
-          {children}
+          <div id="main-content" tabIndex={-1}>{children}</div>
           <Footer />
           <Analytics />
         </div>
+        </MotionProvider>
       </body>
     </html>
   )

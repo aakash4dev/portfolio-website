@@ -40,7 +40,7 @@ export default function GoToTop() {
           <Button
             onClick={scrollToTop}
             size="icon"
-            className="rounded-full h-12 w-12 bg-primary text-white shadow-lg glow-border"
+            className="rounded-none h-10 w-10 bg-foreground text-background shadow-none"
             aria-label="Go to top"
           >
             <ChevronUp className="h-6 w-6" />

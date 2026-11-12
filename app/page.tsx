@@ -5,20 +5,20 @@ import Experience from "@/components/sections/Experience"
 import Projects from "@/components/sections/Projects"
 import WhatIOffer from "@/components/sections/WhatIOffer"
 import Contact from "@/components/sections/Contact"
-import FloatingContact from "@/components/FloatingContact"
+import WritingIndex from "@/components/site/WritingIndex"
 import GoToTop from "@/components/GoToTop"
 
 export default function Home() {
   return (
     <main className="relative">
       <Hero />
+      <Projects />
       <About />
       <Skills />
       <Experience />
-      <Projects />
+      <WritingIndex />
       <WhatIOffer />
       <Contact />
-      <FloatingContact />
       <GoToTop />
     </main>
   )
