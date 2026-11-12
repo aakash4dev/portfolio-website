@@ -10,9 +10,9 @@ export default function About() {
       <Reveal className="press-about-copy" from="right" delay={0.1}>
         <p className="press-eyebrow">About me</p>
         <h2>HI, I'M AAKASH.<br />BLOCKCHAIN AND AI ENGINEER<span className="press-red-period">.</span></h2>
-        <p>I'm Aakash Singh Rajput, a Senior Blockchain Engineer. I work on smart contracts, blockchain networks, and artificial intelligence.</p>
+        <p>I'm Aakash Singh Rajput, a Senior Blockchain Engineer with a computer science background. Since 2021 I have built blockchain networks, smart contracts, and the software around them.</p>
         <p>I write smart contracts in Solidity and Rust. I have built Cosmos SDK blockchains, DeFi apps, and ZK rollup software. I'm also studying for an M.Tech in Artificial Intelligence at BITS Pilani.</p>
-        <p>I like to learn how hard systems work, build useful things with them, and explain them in simple words.</p>
+        <p>I enjoy problems where the system must be both correct and fast: ordering transactions, proving them with zero-knowledge proofs, pricing trades, and making AI models useful inside real products.</p><p>I also ship my own products and explain what I learn in simple words.</p>
         <div className="press-about-links"><a href="https://github.com/aakash4dev" target="_blank" rel="noopener noreferrer"><Github size={17} /> GitHub <ArrowUpRight size={14} /></a><a href="https://linkedin.com/in/aakash4dev" target="_blank" rel="noopener noreferrer"><Linkedin size={17} /> LinkedIn <ArrowUpRight size={14} /></a><Link href="/contact"><Mail size={17} /> Contact me <ArrowUpRight size={14} /></Link></div>
       </Reveal>
     </section>

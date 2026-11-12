@@ -1,16 +1,12 @@
 import Link from "next/link"
-import { ArrowUpRight, Brain, Code, Database, Cpu, Server, Layers, Zap, LineChart } from "lucide-react"
+import { ArrowUpRight, Brain, Code, Cpu, Layers } from "lucide-react"
 import Reveal from "@/components/Reveal"
 
 const services = [
-  { title: "AI and Blockchain Advice", description: "I help you decide how to use AI and blockchain in your product, and what to build first.", icon: <Brain className="h-10 w-10 text-primary" /> },
-  { title: "Smart Contract Development", description: "I write and test smart contracts for DeFi, NFTs, DAOs, and custom blockchain apps.", icon: <Code className="h-10 w-10 text-primary" /> },
-  { title: "DApp Development", description: "I plan and build complete blockchain apps, from the smart contract to the website people use.", icon: <Layers className="h-10 w-10 text-primary" /> },
-  { title: "AI Features", description: "I add machine learning models and AI features to your app, and help you study your data.", icon: <Cpu className="h-10 w-10 text-primary" /> },
-  { title: "Blockchain Servers", description: "I set up and run blockchain nodes, networks, and servers for your project.", icon: <Server className="h-10 w-10 text-primary" /> },
-  { title: "Token Design", description: "I help you plan how your token works: supply, rewards, and how it keeps its value over time.", icon: <LineChart className="h-10 w-10 text-primary" /> },
-  { title: "Technical Review", description: "I check blockchain projects and smart contracts for investors, and report the problems I find.", icon: <Database className="h-10 w-10 text-primary" /> },
-  { title: "Web3 Training", description: "I teach teams blockchain development and AI with training sessions and workshops.", icon: <Zap className="h-10 w-10 text-primary" /> },
+  { title: "Smart Contract and dApp Development", description: "I write, test, and deploy smart contracts in Solidity and Rust, and build the full app around them.", icon: <Code className="h-10 w-10 text-primary" /> },
+  { title: "AI Agent Development", description: "I build AI agents and LLM features that work inside your product: chat assistants, search over your data, and automation.", icon: <Cpu className="h-10 w-10 text-primary" /> },
+  { title: "Architecture and Code Review", description: "I design the system for your chain or app, and review code and smart contracts. You get a written report of the problems I find.", icon: <Layers className="h-10 w-10 text-primary" /> },
+  { title: "Consulting and Training", description: "I help you decide what to build first with AI and blockchain, and I teach your team with workshops.", icon: <Brain className="h-10 w-10 text-primary" /> },
 ]
 
 export default function WhatIOffer() {

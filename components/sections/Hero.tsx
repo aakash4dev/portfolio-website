@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useRef, useState, type PointerEvent } from "react"
 import { motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion"
-import { ArrowRight, ArrowUpRight, Github, Layers, Minus, Youtube } from "lucide-react"
+import { ArrowRight, ArrowUpRight, Layers, Minus } from "lucide-react"
 
 export default function Hero() {
   const section = useRef<HTMLElement>(null)
@@ -28,7 +28,7 @@ export default function Hero() {
 
   return (
     <section ref={section} id="home" className="press-hero press-container">
-      <motion.div className="press-hero-kicker" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}><span className="press-square press-pulse" /> Senior Blockchain Engineer and AI Developer</motion.div>
+      <motion.div className="press-hero-kicker" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}><span className="press-square press-pulse" /> Blockchain & AI Engineer / Product Builder / Open-Source Contributor</motion.div>
       <div className="press-hero-grid">
         <div className="press-hero-type">
           <h1 className="press-headline" aria-label="Build. Write. Teach.">
@@ -37,8 +37,8 @@ export default function Hero() {
             ))}
           </h1>
           <motion.div className="press-hero-intro" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }}>
-            <p className="press-name">Aakash Singh Rajput<span>AI & Web3 Engineer</span></p>
-            <p>I build software,<br className="hidden sm:block" /> write articles about how it works,<br className="hidden sm:block" /> and make tutorials.</p>
+            <p className="press-name">Aakash Singh Rajput<span>Senior Blockchain & AI Engineer</span></p>
+            <p>I build production-ready products, intelligent systems, and developer tools. Then I write and teach how they work.</p>
           </motion.div>
           <motion.div className="press-hero-links" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.75 }}>
             <Link href="/projects" className="press-button">See my projects <ArrowRight size={17} /></Link>
@@ -82,7 +82,7 @@ export default function Hero() {
           <button type="button" className="press-unfold" onClick={() => setUnfolded(!unfolded)} aria-pressed={unfolded}><Layers size={15} /> {unfolded ? "Close the cards" : "Open the cards"}<span aria-hidden="true">↗</span></button>
         </motion.div>
       </div>
-      <div className="press-hero-bottom"><span>Find me online:</span><div><a href="https://github.com/aakash4dev" target="_blank" rel="noopener noreferrer"><Github size={15} /> GitHub <ArrowUpRight size={13} /></a><a href="https://www.youtube.com/@aakash4dev" target="_blank" rel="noopener noreferrer"><Youtube size={16} /> YouTube <ArrowUpRight size={13} /></a></div></div>
+      <div className="press-hero-bottom"><span>Now: Senior Blockchain Engineer at Tarality / M.Tech in AI at BITS Pilani</span><div><Link href="/contact"><span className="press-square press-pulse" /> Open to new projects <ArrowUpRight size={13} /></Link></div></div>
     </section>
   )
 }

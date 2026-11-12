@@ -122,9 +122,13 @@ h1, h2, h3, .press-wordmark, .press-name, .press-button, .press-footer-top p { f
 .press-browser-bottom { position: absolute; inset: auto 16px 10px; color: #ddd8ce; display: flex; justify-content: space-between; font: 8px var(--font-jetbrains), monospace; }
 .press-unfold { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 24px auto 0; color: var(--press-muted); font: 10px var(--font-jetbrains), monospace; min-height: 40px; padding: 8px 14px; border: 1px solid var(--press-line); background: var(--press-paper); position: relative; z-index: 3; }
 .press-unfold:hover, .press-unfold[aria-pressed=true] { color: var(--press-ink); border-color: var(--press-ink); }
-.press-hero-bottom { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding-block: 17px; border-bottom: 4px solid var(--press-ink); color: var(--press-muted); font: 10px var(--font-jetbrains), monospace; }
+.press-hero-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; align-items: center; padding-block: 17px; border-bottom: 4px solid var(--press-ink); color: var(--press-muted); font: 10px var(--font-jetbrains), monospace; }
 .press-hero-bottom > div { display: flex; gap: 25px; }
 .press-hero-bottom a { display: flex; align-items: center; gap: 7px; color: var(--press-ink); }
+.press-hero-bottom a .press-square { width: 7px; height: 7px; }
+.press-home-tutorials { padding-block: 10px 60px; }
+.press-home-tutorials .press-video { margin-bottom: 0; }
+.press-video-copy h3 { font-size: clamp(22px, 2.3vw, 31px); font-weight: 800; line-height: 1.15; letter-spacing: -.025em; }
 .press-work { display: grid; grid-template-columns: 220px minmax(0,1fr); gap: 42px; padding-top: 38px; padding-bottom: 75px; }
 .press-index-heading { display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 18px; }
 .press-index-heading h2 { font-size: 49px; font-weight: 850; line-height: .94; letter-spacing: -.037em; }
@@ -141,6 +145,7 @@ h1, h2, h3, .press-wordmark, .press-name, .press-button, .press-footer-top p { f
 .press-project-copy h3 { font-size: 24px; font-weight: 800; line-height: 1.1; letter-spacing: -.028em; }
 .press-project-copy h3 a:hover { color: hsl(var(--primary)); }
 .press-project-copy p { font-size: 12px; color: var(--press-muted); line-height: 1.65; margin-top: 7px; max-width: 470px; }
+.press-project-copy p.press-project-status { font-size: 10px; line-height: 1.5; margin-top: 6px; color: var(--press-red); }
 .press-project-tags { display: flex; flex-wrap: wrap; gap: 5px 12px; margin-top: 10px; font: 9px/1.6 var(--font-jetbrains), monospace; color: var(--press-muted); }
 .press-project-tags span + span::before { content: '/'; margin-right: 10px; color: #999188; }
 .press-project-actions { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }

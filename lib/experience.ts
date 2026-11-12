@@ -1,16 +1,5 @@
 export const experiences = [
     {
-        role: "M.Tech in Artificial Intelligence",
-        company: "BITS Pilani (WILP)",
-        location: "Remote",
-        period: "Jan 2026 – Jan 2028",
-        description: [
-            "Studying in the Work Integrated Learning Programme while working full-time.",
-            "Main subjects: generative AI, large language models, and deep learning.",
-        ],
-        tags: ["AI/ML", "Deep Learning", "LLMs", "Research"],
-    },
-    {
         role: "Senior Blockchain Engineer",
         company: "Tarality",
         location: "Noida, Uttar Pradesh, India",
@@ -45,6 +34,20 @@ export const experiences = [
         ],
         tags: ["Next.js", "Node.js", "Polygon", "Solidity"],
     },
+]
+
+export const education = [
+    {
+        role: "M.Tech in Artificial Intelligence",
+        company: "BITS Pilani (WILP)",
+        location: "Remote",
+        period: "Jan 2026 – Jan 2028",
+        description: [
+            "Studying in the Work Integrated Learning Programme while working full-time.",
+            "Main subjects: generative AI, large language models, and deep learning.",
+        ],
+        tags: ["AI/ML", "Deep Learning", "LLMs", "Research"],
+    },
     {
         role: "B.Tech in Computer Science",
         company: "Rungta College of Engineering and Technology",
@@ -58,4 +61,3 @@ export const experiences = [
         tags: ["Computer Science", "Engineering", "Algorithms"],
     },
 ]
-

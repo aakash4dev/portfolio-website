@@ -3,38 +3,15 @@
 import { useState } from "react"
 import Link from "next/link"
 import { AnimatePresence, motion } from "framer-motion"
-import { ArrowRight, ArrowUpRight, BookOpen, FileText, Play, Youtube } from "lucide-react"
-
-const channelUrl = "https://www.youtube.com/@aakash4dev"
-
-const youtubeVideos = [
-  {
-    title: "How to Install Android Studio on Ubuntu 24.04 LTS Linux",
-    description: "A full step-by-step guide to set up Android Studio for mobile app development on Ubuntu.",
-    embedId: "V7et6ZH84AM",
-    tags: ["Android", "Linux", "Ubuntu", "Setup"],
-  },
-]
+import { ArrowRight, ArrowUpRight, BookOpen, FileText, Youtube } from "lucide-react"
+import VideoPlayer from "@/components/VideoPlayer"
+import { channelUrl, youtubeVideos } from "@/lib/tutorials"
 
 const tabs = [
   { id: "youtube", label: "YouTube videos", icon: Youtube, status: `${youtubeVideos.length} ${youtubeVideos.length === 1 ? "video" : "videos"}` },
   { id: "udemy", label: "Udemy courses", icon: BookOpen, status: "Coming soon" },
   { id: "docs", label: "Docs", icon: FileText, status: "Coming soon" },
 ]
-
-// Shows the video picture first. The YouTube player loads only after a click, so the page stays fast.
-function VideoPlayer({ embedId, title }: { embedId: string; title: string }) {
-  const [playing, setPlaying] = useState(false)
-  if (playing) {
-    return <div className="press-video-frame"><iframe src={`https://www.youtube.com/embed/${embedId}?autoplay=1`} title={title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /></div>
-  }
-  return (
-    <button type="button" className="press-video-frame" onClick={() => setPlaying(true)} aria-label={`Play video: ${title}`}>
-      <img src={`https://i.ytimg.com/vi/${embedId}/hqdefault.jpg`} alt="" loading="lazy" />
-      <span className="press-video-play"><Play size={30} fill="currentColor" /></span>
-    </button>
-  )
-}
 
 export default function TutorialsPage() {
   const [activeTab, setActiveTab] = useState("youtube")
